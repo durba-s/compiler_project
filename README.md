@@ -4,7 +4,7 @@
 
 - [Ankita Behera](https://github.com/rxndom266/)
 - [Durba Satpathi](https://github.com/durba-s)
-- [Prakhar Agrawal](https://github.com/PrAkHaR-BitsPilani)
+- [Prakhar Agarwal](https://github.com/PrAkHaR-BitsPilani)
 
 ```cpp
 /**
