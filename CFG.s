@@ -1,15 +1,10 @@
-IMPORTING : link file.q
-MACRO : macro i int
+// IMPORT : link "[.*][\.q]"
+// MACRO : macro IDENTIFIER REPLACEMENT_TEXT
 
 PROGRAM -> DECL
         |  FUNCTION
         |  PROGRAM PROGRAM
         |  /* epsilon */
-        // ADD NT FOR MACRO IN THIS ?
-        // ADD SEPARTE NT FOR MAIN ??
-        // WANT TO SUPPORT LINKER ??
-        // ADD NT FOR DELIMITER ??
-        // MAKE SEPARATE NT FOR INTEGRAL EXPRESSIONS , FLOATING EXPRESSIONS , BOOLEAN EXPRESSIONS , STRING EXPRESSIONS ?? ATTRIBUTE GRAMMAR ??
 
 STMTS -> STMT STMTS
       |  STMT
@@ -22,20 +17,16 @@ STMT -> DECL
      |  FOR
      |  WHILE
      |  DOWHILE
+     |  JUMP
      |  SELECT
-     |  FUNCTION_CALL_STMT
-     // ADD NT FOR MACRO IN THIS ?
-     // ADD JUMP STATEMENT return kaise hoga ????
-     // ADD EXPR;
+     |  EXPR;
 
+// STATEMENTS
 DECL -> SCOPE MODIFIER TYPE DECL_LIST;
 DECL_LIST -> ID
           |  ID = EXPR
-          |  ID[EXPR]
-          |  ID[EXPR] = EXPR // NEED TO ADD SEPARATE NT FOR { EXPR , EXPR } : LIST
-          |  ID[] = EXPR
           |  DECL_LIST , DECL_LIST
-          // DOES NOT SUPPORT MULTI-DIMENSIONAL ARRAY
+          // DOES NOT SUPPORT UNDEFINED DIMENSIONS
 
 ASSIGNMENT -> ID = EXPR;
 
@@ -48,6 +39,8 @@ FOR -> for ID in ( EXPR ,  EXPR ) CODE_BLOCK
 WHILE -> while ( EXPR ) CODE_BLOCK
 DOWHILE -> do CODE_BLOCK while( EXPR );
 
+JUMP -> return EXPR;
+
 SELECT -> select ( EXPR ) { CASE_LIST }
 CASE_LIST -> case EXPR : STMTS CASE_LIST
           |  default : STMTS
@@ -58,8 +51,7 @@ ARG_LIST -> TYPE ID , ARG_LIST
          |  TYPE ID
          | /* epsilon */
 
-FUNCTION_CALL_STMT -> FUNCTION_CALL_EXPR;
-FUNCTION_CALL_EXPR -> ID ( PARAM_LIST )
+FUNCTION_CALL -> ID ( PARAM_LIST )
 
 PARAM_LIST -> EXPR , PARAM_LIST
            |  /* epsilon */
@@ -73,6 +65,9 @@ MODIFIER -> static
          |  const static
          |  /* epsilon */
 
+TYPE -> D_TYPE | D_TYPE [ DIM ]
+DIM -> EXPR , DIM
+    |  EXPR
 D_TYPE -> int
      | float
      | char
@@ -84,9 +79,12 @@ EXPR -> EXPR ? EXPR : EXPR
      | UNARY_OP EXPR
      | EXPR UNARY_OP
      | ( EXPR )
+     | FUNCTION_CALL
      | ID
      | LITERAL
-     | FUNCTION_CALL_EXPR
+     | { LIST }
+LIST -> EXPR , LIST
+     |  EXPR
 
 BIN_OP -> ARTM_OP
        |  REL_OP
@@ -116,5 +114,3 @@ UNARY_OP -> ++
          |  --
          |  ~
 
-
-// SAMPLE ARRAY [int , 3 , 3 , 3]
