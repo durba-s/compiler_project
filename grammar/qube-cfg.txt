@@ -1,0 +1,34 @@
+<program> -> <preprocessor> <globals> <function> <main> <function>
+<main> -> int main(){<stmts> return 0;} | void main(){<stmts>} | E
+<stmts> -> <stmt><stmts> | <stmt>
+<stmt> -> <decl> | <assignment> | <if> | <for> | <while> | <dowhile> | <select> | <function_call_stmt>
+
+<decl> -> <scope><type><decl_list>;
+<decl_list> -> <id> = <expr>, <decl_list> | <id>, <decl_list> | <id>[<int_literal>],<decl_list> | <id>[<id>],<decl_list> | <id>[] = <expr>, <decl_list>
+<scope> -> global | static | E
+<type> -> int | float | char
+<id> -> <identifier> | <identifier>[<int_literal]
+<assignment> -> <id> = <expr>; | <type><id> = <expr>;
+<expr> -> <expr> ? <expr> : <expr> | <expr><ar_op><expr> | <expr><rel_op><expr> | <expr><log_op><expr> | <bit_neg><expr> | <expr><bit_op><expr> |    <expr><un_op>|<un_op><expr> | (<expr>) | <id> | <literal> | <function_call_expr>
+<ar_op> -> + | - | * | / | %
+<rel_op> -> < | <= | > | >= | == | !=
+<log_op> -> && | \| | !
+<bit_op> -> & | \| | << | >> | ^
+<bit_neg> -> ~
+<un_op> -> ++ | --
+
+<if> -> if(<expr>){ <stmts> }<elif> | if(<expr>){ <stmts> }<elif>else{<stmts>}
+<elif> -> elif(<expr>){ <stmts> }<elif> | E 
+<for> -> for <id> in (<expr>, <expr>){ <stmts> }
+<while> -> while(<expr>){ <stmts> }
+<dowhile> -> do{ <stmts> }while(<expr>);
+<select> -> select(<expr>){<case_list>}
+<case_list> -> case <literal> : <stmts><case_list> | default: <stmts> | E
+<function> -> <function><function> | E | def <id> (<arg_list>) => <type>{ <stmts> }
+<arg_list> -> <type><id>,<arglist> | <type><id> | E
+<function_call_stmt> -> <function_call_expr>;
+<function_call_expr> -> <id>(<param_list>)
+<param_list> -> <expr>, <param_list> | E
+
+
+
