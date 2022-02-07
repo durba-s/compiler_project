@@ -33,6 +33,7 @@ STMT:     DECL
                     // DOES NOT SUPPORT UNDEFINED DIMENSIONS
      // ASSIGNMENT
      ASSIGNMENT:    ID = EXPR;
+               |    ID [ DIM ] = EXPR;
 
      // CONDITIONAL
      CONDITIONAL:   if ( EXPR ) CODE_BLOCK ELIF
