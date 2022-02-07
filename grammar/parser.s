@@ -54,6 +54,8 @@ STMT:     DECL
 
      // JUMP
      JUMP:     return EXPR;
+          |    break;
+          |    continue;
 
      // SWITCH CASE
      SELECT:   select ( EXPR ) { CASE_LIST }
