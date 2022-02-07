@@ -33,6 +33,7 @@ STMT:     DECL
                     // DOES NOT SUPPORT UNDEFINED DIMENSIONS
      // ASSIGNMENT
      ASSIGNMENT:    ID = EXPR;
+               |    ID [ DIM ] = EXPR;
 
      // CONDITIONAL
      CONDITIONAL:   if ( EXPR ) CODE_BLOCK ELIF
@@ -53,6 +54,8 @@ STMT:     DECL
 
      // JUMP
      JUMP:     return EXPR;
+          |    break;
+          |    continue;
 
      // SWITCH CASE
      SELECT:   select ( EXPR ) { CASE_LIST }
