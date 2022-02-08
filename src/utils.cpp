@@ -11,6 +11,68 @@ regex STRING("\"(\\\\.|[^\"\\\\])*\"");
 regex IDENTIFIER("[_a-zA-Z][_a-zA-Z0-9]{0,30}");
 regex BLANK("[\\s\t]+");
 
+const set<string> keys = {
+        "if",
+        "elif",
+        "for",
+        "in",
+        "while",
+        "do",
+        "return",
+        "break",
+        "continue",
+        "select",
+        "case",
+        "default",
+        "def",
+        "global",
+        "static",
+        "const",
+        "int",
+        "float",
+        "char",
+        "bool",
+        "string",
+        "true",
+        "false",
+        "void"
+    };
+const set<string> delims = {
+            "{",
+            "}",
+            ";",
+            ",",
+            "[",
+            "]",
+            "(",
+            ")",
+            ":",
+            "?",
+            "-",
+            "*",
+            "/",
+            "%",
+            ">",
+            ">=",
+            "<",
+            "<=",
+            "!=",
+            "&&",
+            "||",
+            "!",
+            "&",
+            "|",
+            "<<",
+            ">>",
+            "^",
+            "--",
+            "~",
+            "=",
+            "+=",
+            "-=",
+            "=>"
+        };
+
 string getNextToken(){
     return lexeme;
 }
@@ -31,40 +93,6 @@ bool isBlank(string s){
 }
 
 bool isDelimiter(string s){
-    map<string, string> delims;
-    delims["{"]= "{";
-    delims[";"]=";";
-    delims["}"]="}";
-    delims[","]=",";
-    delims["["]="[";
-    delims["]"]="]";
-    delims["("]="(";
-    delims[")"]=")";
-    delims[":"]=":";
-    delims["?"]="?";
-    delims["-"]="-";
-    delims["*"]="*";
-    delims["/"]="/";
-    delims["%"]="%";
-    delims[">"]=">";
-    delims[">="]= ">=";
-    delims["<"]="<";
-    delims["<="]= "<=";
-    delims["!="]= "!=";
-    delims["&&"]= "&&";
-    delims["||"]= "||";
-    delims["!"]="!";
-    delims["&"]="&";
-    delims["|"]="|";
-    delims["<<"]= "<<";
-    delims[">>"]= ">>";
-    delims["^"]="^";
-    delims["--"]= "--";
-    delims["~"]="~";
-    delims["="]="=";
-    delims["+="]= "+=";
-    delims["-="]= "-=";
-    delims["=>"]= "=>";
     if(delims.find(s)!=delims.end())
         return true;
     else
@@ -72,31 +100,7 @@ bool isDelimiter(string s){
 }
 
 bool isKeyword(){
-    map<string, string> keywd;
-    keywd["if"] = "if";
-    keywd["elif"] = "elif";
-    keywd["else"] = "else";
-    keywd["for"] = "for";
-    keywd["in"] = "in";
-    keywd["while"] = "while";
-    keywd["do"] = "do";
-    keywd["return"] = "return";
-    keywd["break"] = "break";
-    keywd["continue"] = "continue";
-    keywd["select"] = "select";
-    keywd["case"] = "case";
-    keywd["default"] = "default";
-    keywd["def"] = "def";
-    keywd["global"] = "global";
-    keywd["static"] = "static";
-    keywd["const"] = "const";
-    keywd["int"] = "int";
-    keywd["float"] = "float";
-    keywd["char"] = "char";
-    keywd["bool"] = "bool";
-    keywd["string"] = "string";
-    keywd["true"] = "true";
-    if(keywd.find(lexeme)!=keywd.end())
+    if(keys.find(lexeme)!=keys.end())
         return true;
     else
         return false;
