@@ -5,10 +5,11 @@ using namespace std;
 
 string getNextToken();
 
-char getChar();
+void getChar();
 void addChar();
 
-bool isDelimiter();
+bool isBlank(string s);
+bool isDelimiter(string s);
 bool isKeyword();
 bool isIdentifier();
 string isLiteral();
