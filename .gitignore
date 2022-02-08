@@ -1,10 +1,7 @@
-# Ankita
 .vscode
 
-# Durba
-.vscode
 lib
 
-# Prakhar
-compile
-qube
+qlexer
+input.q
+output.txt

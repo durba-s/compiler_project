@@ -20,6 +20,7 @@ keywords = {
     float
     char
     bool
+    void
     string
     true
     false
