@@ -1,45 +1,130 @@
 #include "utils.h"
 
 char curr , next;
-std::string lexeme;
+string lexeme="",delim="";
 
-std::regex INT("[+-]?[0-9]+");
-std::regex FLOAT("[+-]?[0-9]*\\.?[0-9]+");
-std::regex CHAR("'.'");
-std::regex BOOL("true|false");
-std::regex STRING("\"(\\\\.|[^\"\\\\])*\"");
+regex INT("[+-]?[0-9]+");
+regex FLOAT("[+-]?[0-9]*\\.?[0-9]+");
+regex CHAR("'.'");
+regex BOOL("true|false");
+regex STRING("\"(\\\\.|[^\"\\\\])*\"");
+regex IDENTIFIER("[_a-zA-Z][_a-zA-Z0-9]{0,30}");
+regex BLANK("[\\s\t]+");
 
-std::string getNextToken(){
+const set<string> keys = {
+        "if",
+        "elif",
+        "for",
+        "in",
+        "while",
+        "do",
+        "return",
+        "break",
+        "continue",
+        "select",
+        "case",
+        "default",
+        "def",
+        "global",
+        "static",
+        "const",
+        "int",
+        "float",
+        "char",
+        "bool",
+        "string",
+        "true",
+        "false",
+        "void"
+    };
+const set<string> delims = {
+            "{",
+            "}",
+            ";",
+            ",",
+            "[",
+            "]",
+            "(",
+            ")",
+            ":",
+            "?",
+            "-",
+            "*",
+            "/",
+            "%",
+            ">",
+            ">=",
+            "<",
+            "<=",
+            "!=",
+            "&&",
+            "||",
+            "!",
+            "&",
+            "|",
+            "<<",
+            ">>",
+            "^",
+            "--",
+            "~",
+            "=",
+            "+=",
+            "-=",
+            "=>"
+        };
+
+string getNextToken(){
     return lexeme;
 }
 
-char getChar(){
+void getChar(){
 
 }
+
 void addChar(){
 
 }
 
+bool isBlank(string s){
+    if(regex_match(s , BLANK))
+        return true;
+    else
+        return false;
+}
+
+bool isDelimiter(string s){
+    if(delims.find(s)!=delims.end())
+        return true;
+    else
+        return false;
+}
 
 bool isKeyword(){
+    if(keys.find(lexeme)!=keys.end())
+        return true;
+    else
+        return false;
 
 }
+
+
 bool isIdentifier(){
-
+    if(regex_match(lexeme , IDENTIFIER))
+        return true;
+    else
+        return false;
 }
-bool isDelimiter(){
 
-}
-std::string isLiteral(){
-    if(std::regex_match(lexeme , INT))
+string isLiteral(){
+    if(regex_match(lexeme , INT))
         return "INTEGER_LITERAL";
-    if(std::regex_match(lexeme , FLOAT))
+    if(regex_match(lexeme , FLOAT))
         return "FLOAT_LITERAL";
-    if(std::regex_match(lexeme , CHAR))
+    if(regex_match(lexeme , CHAR))
         return "CHARACTER_LITERAL";
-    if(std::regex_match(lexeme , BOOL))
+    if(regex_match(lexeme , BOOL))
         return "BOOLEAN_LITERAL";
-    if(std::regex_match(lexeme , STRING))
+    if(regex_match(lexeme , STRING))
         return "STRING_LITERAL";
     return "ERROR";
 }

@@ -1,12 +1,16 @@
+#include <iostream>
+#include <set>
 #include <string>
 #include <regex>
+using namespace std;
 
-std::string getNextToken();
+string getNextToken();
 
-char getChar();
+void getChar();
 void addChar();
 
+bool isBlank(string s);
+bool isDelimiter(string s);
 bool isKeyword();
 bool isIdentifier();
-bool isDelimiter();
-std::string isLiteral();
+string isLiteral();
