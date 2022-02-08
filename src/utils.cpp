@@ -1,4 +1,5 @@
 #include "utils.h"
+
 char curr , next;
 string lexeme;
 
