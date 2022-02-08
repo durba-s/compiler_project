@@ -1,6 +1,6 @@
 #include "utils.h"
 char curr , next;
-string lexeme;
+string lexeme="",delim="";
 
 regex INT("[+-]?[0-9]+");
 regex FLOAT("[+-]?[0-9]*\\.?[0-9]+");
@@ -36,7 +36,9 @@ const set<string> keys = {
         "false",
         "void"
     };
-const set<string> delims = {"{","}",
+const set<string> delims = {
+            "{",
+            "}",
             ";",
             ",",
             "[",
