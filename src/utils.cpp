@@ -1,5 +1,4 @@
 #include "utils.h"
-
 char curr , next;
 string lexeme;
 
@@ -37,9 +36,7 @@ const set<string> keys = {
         "false",
         "void"
     };
-const set<string> delims = {
-            "{",
-            "}",
+const set<string> delims = {"{","}",
             ";",
             ",",
             "[",

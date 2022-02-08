@@ -3,7 +3,7 @@ CC = g++
 SRC=src
 LIB=lib
 
-FLAGS = -Wall -g
+FLAGS = -Wall -g -std=c++11
 
 SRCFILES := $(wildcard *.cpp)
 TARGETS := $(SRCFILES:.cpp=.o)
