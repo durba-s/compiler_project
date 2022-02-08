@@ -96,6 +96,7 @@ D_TYPE:   int
      |    char
      |    bool
      |    string
+     |    void
 
 
 EXPR:     EXPR ? EXPR : EXPR
