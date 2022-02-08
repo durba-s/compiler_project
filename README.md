@@ -1,5 +1,12 @@
 # Compiler Project
 
+### Compilation:
+```sh
+make clean && make
+./qlexer filename.q
+#the output of lexical analysis will be stored in output.txt
+```
+
 # Project Team
 
 - [Ankita Behera](https://github.com/rxndom266/)
