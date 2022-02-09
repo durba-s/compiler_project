@@ -34,6 +34,8 @@ STMT:     DECL
      // ASSIGNMENT
      ASSIGNMENT:    ID = EXPR;
                |    ID [ DIM ] = EXPR;
+               |    ID SHORT_OP EXPR;
+               |    ID [ DIM ] SHORT_OP EXPR;
 
      // CONDITIONAL
      CONDITIONAL:   if ( EXPR ) CODE_BLOCK ELIF
@@ -101,8 +103,8 @@ D_TYPE:   int
 
 EXPR:     EXPR ? EXPR : EXPR
      |    EXPR BIN_OP EXPR
-     |    UNARY_OP EXPR
-     |    EXPR UNARY_OP
+     |    PREFIX EXPR
+     |    EXPR POSTFIX
      |    ( EXPR )
      |    FUNCTION_CALL
      |    ID
@@ -155,8 +157,26 @@ LITERAL:  INTEGER_LITERAL
                |    >>
                |    ^
 
+     // SHORT-HAND OPERATORS
+     SHORT_OP: +=
+          |    -=
+          |    *=
+          |    /=
+          |    %=
+          |    &=
+          |    |=
+          |    ^=
+     
      // UNARY OPERATORS
-     UNARY_OP: ++
-          |    --
-          |    ~
+
+          // PREFIX OPERATIORS
+          PREFIX:   ++
+               |    --
+               |    ~
+               |    +
+               |    -
+          
+          // POSTFIX OPERATORS
+          POSTFIX:  ++
+               |    --
 

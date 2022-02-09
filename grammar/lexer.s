@@ -26,7 +26,7 @@ keywords = {
     false
 }
 
-OTHER_SYMBOLS = {
+SPECIAL_SYMBOLS = {
     {
     }
     ;
@@ -61,13 +61,21 @@ OPERATORS = {
     <<
     >>
     ^
+    +=
+    -=
+    *=
+    /=
+    %=
+    &=
+    |=
+    ^=
     ++
     --
     ~
 }
 
-INTEGER_LITERAL -> [+-]?[0-9]+
-FLOAT_LITERAL -> [+-]?[0-9]*\.?[0-9]+
+INTEGER_LITERAL -> [0-9]+
+FLOAT_LITERAL -> [0-9]*\.?[0-9]+
 CHARACTER_LITERAL -> '.'
 BOOLEAN_LITERAL -> true|false
 STRING_LITERAL -> \"(\\.|[^"\\])*\"
