@@ -1,4 +1,4 @@
-#include "utils.h"
+#include "inp.h"
 
 string readFN(int argc, char *argv[]){
     if(argc==1){
