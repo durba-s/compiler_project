@@ -1,5 +1,6 @@
 .vscode
 
+compile
 lib
 
 qlexer
