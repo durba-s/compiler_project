@@ -3,9 +3,8 @@
 
 int main(int argc, char *argv[]) {
     string fn = readFN(argc,argv); // read name of qube source file
-    
-    displayFile(fn);   
-    
+  
+    displayFile(fn);
+  
     return 0;
-
 }
