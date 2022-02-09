@@ -1,16 +1,18 @@
-#include <iostream>
-#include <set>
-#include <string>
-#include <regex>
+#include <fstream>
+
 using namespace std;
+using std::ifstream;
 
-string getNextToken();
+int openSourceFile(string _fname);
+int closeSourceFile();
 
-void getChar();
-void addChar();
+int getLineNo();
 
-bool isBlank(string s);
-bool isDelimiter(string s);
-bool isKeyword();
-bool isIdentifier();
-string isLiteral();
+bool isEOF();
+string getNextLexeme();
+
+bool isKeyword(string s);
+bool isIdentifier(string s);
+bool isOperator(string s);
+bool isSpecialSymbol(string s);
+string isLiteral(string s);
