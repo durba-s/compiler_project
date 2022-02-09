@@ -1,130 +1,138 @@
 #include "utils.h"
+#include "constants.h"
 
 char curr , next;
 string lexeme = "", delim = "";
-
-regex INT("[+-]?[0-9]+");
-regex FLOAT("[+-]?[0-9]*\\.?[0-9]+");
-regex CHAR("'.'");
-regex BOOL("true|false");
-regex STRING("\"(\\\\.|[^\"\\\\])*\"");
-regex IDENTIFIER("[_a-zA-Z][_a-zA-Z0-9]{0,30}");
-regex BLANK("[\\s\t]+");
-
-const set<string> keys = {
-        "if",
-        "elif",
-        "for",
-        "in",
-        "while",
-        "do",
-        "return",
-        "break",
-        "continue",
-        "select",
-        "case",
-        "default",
-        "def",
-        "global",
-        "static",
-        "const",
-        "int",
-        "float",
-        "char",
-        "bool",
-        "void",
-        "string",
-        "true",
-        "false"
-    };
-const set<string> delims = {
-            "{",
-            "}",
-            ";",
-            ",",
-            "[",
-            "]",
-            "(",
-            ")",
-            ":",
-            "?",
-            "-",
-            "*",
-            "/",
-            "%",
-            ">",
-            ">=",
-            "<",
-            "<=",
-            "!=",
-            "&&",
-            "||",
-            "!",
-            "&",
-            "|",
-            "<<",
-            ">>",
-            "^",
-            "--",
-            "~",
-            "=",
-            "+=",
-            "-=",
-            "=>"
-        };
-
-string getNextToken(){
-    return lexeme;
-}
+int lc = 1;
+ifstream inp;
 
 void getChar(){
-
+    if(!isEOF())
+        inp >> noskipws >> curr;
 }
-
-void addChar(){
-
-}
-
-bool isBlank(string s){
-    if(regex_match(s , BLANK))
-        return true;
-    else
-        return false;
+int addChar(){
+    lexeme.push_back(curr);
+    return 1;
 }
 
 bool isDelimiter(string s){
-    if(delims.find(s)!=delims.end())
-        return true;
-    else
-        return false;
+    return isOperator(s) || isSpecialSymbol(s);
 }
 
-bool isKeyword(){
-    if(keys.find(lexeme)!=keys.end())
-        return true;
-    else
-        return false;
+int openSourceFile(string _fname){
+    inp.open(_fname);
+    if(!inp){
+        fprintf(stderr , "[error]File could not be opened");
+        return 0;
+    }
+    inp >> noskipws >> curr;
+    return 1;
+}
+int closeSourceFile(){
+    inp.close();
+    return 1;
+}
 
+int getLineNo(){
+    return lc;
+}
+
+bool isEOF(){
+    return inp.eof();
+}
+
+void handleDelimiter(){
+    if(delim == "\n"){
+        // NEW LINE
+        lc++;
+        delim = "";
+    }
+    else if(delim == " "){
+        // WHITESPACES
+        while(!isEOF() && curr == ' '){
+            getChar();
+        }
+        delim = "";
+    }
+    else if(delim == "\""){
+        // STRING LITERAL
+        while(!isEOF() && curr != '"'){
+            delim.push_back(curr);
+            getChar();
+        }
+        delim.push_back(curr);
+        getChar();
+    }
+    else if(delim == "#"){
+        // COMMENT
+        while(!isEOF() && curr != '\n')
+            getChar();
+        delim = "";
+    }else{
+        // OPERATOR
+        delim.push_back(curr);
+        if(isDelimiter(delim))
+            getChar();
+        else
+            delim.pop_back();
+    }
+}
+
+string getNextLexeme(){
+
+    if(delim != ""){
+        string temp = delim;
+        delim = "";
+        return temp;
+    }
+
+    lexeme = "";
+    delim = "";
+
+    while(!isEOF()){
+        
+        if(isDelimiter(string(1,curr))){
+            delim =  string(1 , curr);
+            getChar();
+            handleDelimiter();
+            break;
+        }
+        addChar();
+        getChar();
+    }
+    if(lexeme != "")
+        return lexeme;
+    if(delim != ""){
+        string temp = delim;
+        delim = "";
+        return temp;
+    }
+    return "";
 }
 
 
-bool isIdentifier(){
-    if(regex_match(lexeme , IDENTIFIER))
-        return true;
-    else
-        return false;
+bool isKeyword(string s){
+    return keys.find(s) != keys.end();
 }
-
-string isLiteral(){
-    if(regex_match(lexeme , INT))
+bool isIdentifier(string s){
+    return regex_match(s , IDENTIFIER);
+}
+bool isOperator(string s){
+    return operators.find(s) != operators.end();
+}
+bool isSpecialSymbol(string s){
+    return special_symbols.find(s) != special_symbols.end();
+}
+string isLiteral(string s){
+    if(regex_match(s , INT))
         return "INTEGER_LITERAL";
-    if(regex_match(lexeme , FLOAT))
+    if(regex_match(s , FLOAT))
         return "FLOAT_LITERAL";
-    if(regex_match(lexeme , CHAR))
+    if(regex_match(s , CHAR))
         return "CHARACTER_LITERAL";
-    if(regex_match(lexeme , BOOL))
+    if(regex_match(s , BOOL))
         return "BOOLEAN_LITERAL";
-    if(regex_match(lexeme , STRING))
+    if(regex_match(s , STRING))
         return "STRING_LITERAL";
     return "ERROR";
 }
