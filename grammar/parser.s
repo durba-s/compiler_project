@@ -1,11 +1,10 @@
-// IMPORT : link "[.*][\.q]"
+// IMPORT : link "[.*][\.qh]"
 // MACRO : macro IDENTIFIER REPLACEMENT_TEXT
 
 PROGRAM:  DECL
      |    FUNCTION
      |    PROGRAM PROGRAM
      |    /* epsilon */
-
 
 STMTS:    STMT STMTS
      |    STMT
