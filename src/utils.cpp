@@ -65,9 +65,21 @@ void handleDelimiter(){
     }
     else if(delim == "#"){
         // COMMENT
-        while(!isEOF() && curr != '\n')
+        if(curr=='/'){
+            while(!isEOF()){
+                getChar();
+            cj: if(curr=='/'){
+                    getChar();
+                    if(curr=='#')   break;
+                    else if(curr=='/') goto cj;
+                }
+            }
+            delim = "";
+        }else{
+            while(!isEOF() && curr != '\n')
             getChar();
-        delim = "";
+            delim = "";
+        }
     }else{
         // OPERATOR
         delim.push_back(curr);
@@ -90,7 +102,6 @@ string getNextLexeme(){
     delim = "";
 
     while(!isEOF()){
-        
         if(isDelimiter(string(1,curr))){
             delim =  string(1 , curr);
             getChar();
@@ -125,14 +136,14 @@ bool isSpecialSymbol(string s){
 }
 string isLiteral(string s){
     if(regex_match(s , INT))
-        return "INTEGER_LITERAL";
+        return "INT_LIT";
     if(regex_match(s , FLOAT))
-        return "FLOAT_LITERAL";
+        return "FLOAT_LIT";
     if(regex_match(s , CHAR))
-        return "CHARACTER_LITERAL";
+        return "CHAR_LIT";
     if(regex_match(s , BOOL))
-        return "BOOLEAN_LITERAL";
+        return "BOOL_LIT";
     if(regex_match(s , STRING))
-        return "STRING_LITERAL";
+        return "STR_LIT";
     return "ERROR";
 }
