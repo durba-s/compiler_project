@@ -1,6 +1,6 @@
 #include "lexer.h"
 
-void displayFile(string _fname){
+void displayFile(string _fname,int choice){
     map<string, pair<string,int> > st = {
     {"+"       ,{"OP_AR_add    ",1} },
     {"-"       ,{"OP_AR_sub    ",2} },
@@ -78,7 +78,16 @@ void displayFile(string _fname){
         {"BOOL_LIT",92},
         {"IDENTIFIER",93}
     };
-    ofstream lex_out("st.txt");
+    string out_file;
+    if(choice){
+
+        regex r("\\.q");
+        out_file= regex_replace( _fname, r, "_lex_out.txt");
+    }
+    else{
+        out_file= "st.txt";
+    }
+    ofstream lex_out(out_file);
 
     if(!openSourceFile(_fname))
         exit(EXIT_FAILURE);
