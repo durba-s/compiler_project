@@ -3,4 +3,4 @@
 #include "utils.h"
 #include "constants.h"
 
-void displayFile(string _fname,int choice);
+void displayFile(string _fname);

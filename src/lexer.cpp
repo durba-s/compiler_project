@@ -1,6 +1,6 @@
 #include "lexer.h"
 
-void displayFile(string _fname,int choice){
+void displayFile(string _fname){
     map<string, pair<string,int> > st = {
     {"+"       ,{"OP_AR_add    ",1} },
     {"-"       ,{"OP_AR_sub    ",2} },
@@ -78,15 +78,10 @@ void displayFile(string _fname,int choice){
         {"BOOL_LIT",92},
         {"IDENTIFIER",93}
     };
-    string out_file;
-    if(choice){
 
-        regex r("\\.q");
-        out_file= regex_replace( _fname, r, "_lex_out.txt");
-    }
-    else{
-        out_file= "st.txt";
-    }
+
+    regex r("\\.q");
+    string out_file= regex_replace( _fname, r, "_lex_out.txt");
     ofstream lex_out(out_file);
 
     if(!openSourceFile(_fname))
@@ -115,14 +110,14 @@ void displayFile(string _fname,int choice){
             else{
                 string type = isLiteral(lexeme);
                 if(type == "ERROR"){
-                    lex_out << "[UNIDENTIFIED TOKEN]\t";
+                    lex_out << "<error>UNIDENTIFIED TOKEN\tin";
                 }
                 else{
                     map<string, int >::iterator tok=st1.find(type);
                     lex_out << "[" << type << "]\t\t\t"<<tok->second<<"\t\t";
                 }
             }
-            lex_out << "[LINE NO: " << getLineNo() << "]\t\t" << lexeme << endl;
+            lex_out << "LINE NO: " << getLineNo() << "\t\t" << lexeme << endl;
         }
     }
       lex_out.close();
