@@ -6,3 +6,5 @@ lib
 qlexer
 input.q
 output.txt
+
+*_lex_out.txt
