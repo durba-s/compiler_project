@@ -110,7 +110,7 @@ void displayFile(string _fname){
             else{
                 string type = isLiteral(lexeme);
                 if(type == "ERROR"){
-                    lex_out << "<error>UNIDENTIFIED TOKEN\tin";
+                    lex_out << "[error]UNIDENTIFIED TOKEN\tin\t";
                 }
                 else{
                     map<string, int >::iterator tok=st1.find(type);
