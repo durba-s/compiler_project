@@ -92,6 +92,7 @@ MODIFIER: static
 TYPE:     D_TYPE | D_TYPE [ DIM ]
 DIM: EXPR , DIM
 |    EXPR
+|    /* epsilon */
 D_TYPE:   int
      |    float
      |    char

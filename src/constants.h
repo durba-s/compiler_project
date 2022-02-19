@@ -9,7 +9,7 @@ const regex CHAR("'.'");
 const regex BOOL("true|false");
 const regex STRING("\"(\\\\.|[^\"\\\\])*\"");
 const regex IDENTIFIER("[_a-zA-Z][_a-zA-Z0-9]{0,30}");
-const regex FILENAME("[/_a-zA-Z0-9]+\\.q");
+const regex FILENAME("[\\./_a-zA-Z0-9]+\\.q");
 
 const set<string> keys = {
         "if",
