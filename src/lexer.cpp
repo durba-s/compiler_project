@@ -83,13 +83,14 @@ void displayFile(string _fname){
     regex r("\\.q");
     string out_file= regex_replace( _fname, r, "_lex_out.txt");
     ofstream lex_out(out_file);
+    ofstream& err(lex_out);
 
     if(!openSourceFile(_fname))
         exit(EXIT_FAILURE);
     lex_out <<"Category\t\tToken ID\t  Line No\t\t\tLexeme\n";
     lex_out <<"--------------------------------------------------------------------\n";
     while(!isEOF()){
-        string lexeme = getNextLexeme();
+        string lexeme = getNextLexeme(err);
         if(lexeme != ""){
             if(isKeyword(lexeme)){
                 map<string, pair<string,int> >::iterator tok=st.find(lexeme);
@@ -110,7 +111,7 @@ void displayFile(string _fname){
             else{
                 string type = isLiteral(lexeme);
                 if(type == "ERROR"){
-                    lex_out << "[error]UNIDENTIFIED TOKEN\tin\t";
+                    handleError("unidentified token: [" + lexeme + "]" , err);
                 }
                 else{
                     map<string, int >::iterator tok=st1.find(type);

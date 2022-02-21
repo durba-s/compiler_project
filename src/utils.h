@@ -9,7 +9,8 @@ int closeSourceFile();
 int getLineNo();
 
 bool isEOF();
-string getNextLexeme();
+string getNextLexeme(ofstream& err);
+void handleError(string message, ofstream& err);
 
 bool isKeyword(string s);
 bool isIdentifier(string s);
