@@ -41,7 +41,12 @@ bool isEOF(){
     return inp.eof();
 }
 
-void handleDelimiter(){
+void handleError(string message , ofstream& err){
+    err << "[error]" << message << "\t[LINE NO: " << getLineNo() << "]";
+    exit(0);
+}
+
+void handleDelimiter(ofstream& err){
     if(delim == "\n"){
         // NEW LINE
         lc++;
@@ -54,11 +59,38 @@ void handleDelimiter(){
         }
         delim = "";
     }
+    else if(delim == "'"){
+        // CHARACTER LITERAL
+        if(curr == '\''){
+            // ERROR
+            handleError("empty char literal not allowed" , err);
+        }
+        else{
+            delim.push_back(curr);
+            getChar();
+            if(curr != '\''){
+                // ERROR
+                handleError("missing terminating ' character" , err);
+            }
+            else{
+                delim.push_back(curr);
+            }
+        }
+        getChar();
+    }
     else if(delim == "\""){
         // STRING LITERAL
+        if(isEOF()){
+            // ERROR
+            handleError("missing terminating \" character" , err);
+        }
         while(!isEOF() && curr != '"'){
             delim.push_back(curr);
             getChar();
+        }
+        if(curr != '"'){
+            // ERROR
+            handleError("missing terminating \" character" , err);
         }
         delim.push_back(curr);
         getChar();
@@ -90,7 +122,7 @@ void handleDelimiter(){
     }
 }
 
-string getNextLexeme(){
+string getNextLexeme(ofstream& err){
 
     if(delim != ""){
         string temp = delim;
@@ -105,7 +137,7 @@ string getNextLexeme(){
         if(isDelimiter(string(1,curr))){
             delim =  string(1 , curr);
             getChar();
-            handleDelimiter();
+            handleDelimiter(err);
             break;
         }
         addChar();

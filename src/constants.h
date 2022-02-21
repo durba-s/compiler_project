@@ -75,6 +75,7 @@ const set<string> special_symbols = {
             " ",
             "\n",
             "\"",
+            "'",
             "#",
             "{",
             "}",
