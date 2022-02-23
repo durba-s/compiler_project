@@ -1,6 +1,8 @@
 #include "lexer.h"
 
 void displayFile(string _fname){
+    
+    // A std::map which stores token-IDs.
     map<string, pair<string,int> > st = {
     {"+"       ,{"OP_AR_add    ",1} },
     {"-"       ,{"OP_AR_sub    ",2} },
@@ -81,16 +83,20 @@ void displayFile(string _fname){
 
 
     regex r("\\.q");
-    string out_file= regex_replace( _fname, r, "_lex_out.txt");
+    string out_file= regex_replace( _fname, r, "_lex_out.txt"); //creating the output file.
     ofstream lex_out(out_file);
+    ofstream& err(lex_out);
 
     if(!openSourceFile(_fname))
-        exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE); // throw error if file can't be opened
     lex_out <<"Category\t\tToken ID\t  Line No\t\t\tLexeme\n";
     lex_out <<"--------------------------------------------------------------------\n";
     while(!isEOF()){
-        string lexeme = getNextLexeme();
-        if(lexeme != ""){
+        string lexeme = getNextLexeme(err); // get the next lexeme.
+        if(lexeme != ""){ 
+
+            // check if the obtained lexeme is a KEYWORD, IDENTIFIER, OPERATOR, SPECIAL SYMBOL or a LITERAL.
+
             if(isKeyword(lexeme)){
                 map<string, pair<string,int> >::iterator tok=st.find(lexeme);
                 lex_out << tok->second.first<<"\t\t"<<tok->second.second<<"\t\t";
@@ -110,7 +116,8 @@ void displayFile(string _fname){
             else{
                 string type = isLiteral(lexeme);
                 if(type == "ERROR"){
-                    lex_out << "[error]UNIDENTIFIED TOKEN\tin\t";
+                    // unable to specify the type of lexeme.
+                    handleError("unidentified token: [" + lexeme + "]" , err);
                 }
                 else{
                     map<string, int >::iterator tok=st1.find(type);
