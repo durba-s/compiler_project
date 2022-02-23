@@ -6,10 +6,17 @@ string lexeme = "", delim = "";
 int lc = 1;
 ifstream inp;
 
+/**
+ * Stores the next character in curr if available.
+ * */
 void getChar(){
     if(!isEOF())
         inp >> noskipws >> curr;
 }
+
+/**
+ * Adds the current character to the current lexeme.
+ * */
 int addChar(){
     lexeme.push_back(curr);
     return 1;
@@ -46,6 +53,9 @@ void handleError(string message , ofstream& err){
     exit(0);
 }
 
+/**
+ * Takes proper actions depending upon the type of delimeter stored in delim.
+ * */
 void handleDelimiter(ofstream& err){
     if(delim == "\n"){
         // NEW LINE
