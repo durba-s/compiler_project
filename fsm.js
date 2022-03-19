@@ -7,8 +7,8 @@
 
 /*Alpha={a,b,..,z,A,B,..Z}
 Digit={0,1,2,...,9}
-Symbols={=,{,},[,], , ,}
-Operators={}
+Symbols={=,{,},[,],.....}
+Operators={<,>,!=,==,.....}
 Keywords={}
 String Literal
 Int Literal
@@ -24,6 +24,7 @@ var mainFsm = {
         {name:'\'',from:'Start',to: 'isChar'},
         {name:'any alphabet',from:'isChar',to: 'char'},
         {name:'\'',from:'char',to: 'Char_Literal'},
+        {name:'keyword',from:'Start',to: 'keyword'},
         {name:'[_a-zA-Z]',from:'Start',to: 'Identifier'},
         {name:'[_a-zA-Z0-9]',from:'Identifier',to: 'Identifier'},
         {name:'[0-9]',from:'Start',to: 'Int_Literal'},
@@ -54,5 +55,6 @@ var mainFsm = {
         {name:'Operator', shape:'doublecircle'},
         {name:'Symbol', shape:'doublecircle'},
         {name:'Float_Literal', shape:'doublecircle'},
+        {name:'keyword', shape:'doublecircle'},
     ]
 }

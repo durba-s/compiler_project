@@ -1,18 +1,31 @@
 Category		Token ID	  Line No			Lexeme
 --------------------------------------------------------------------
-KEYWD_DEF    		66		[LINE NO: 1]		def
-IDENTIFIER			93		[LINE NO: 1]		main
-SYM_B1       		38		[LINE NO: 1]		(
-SYM_B2       		39		[LINE NO: 1]		)
-OP_FUNC      		41		[LINE NO: 1]		=>
-KEYWD_INT    		70		[LINE NO: 1]		int
-SYM_P1       		31		[LINE NO: 1]		{
-IDENTIFIER			93		[LINE NO: 2]		print
-SYM_B1       		38		[LINE NO: 2]		(
-[STR_LIT]			91		[LINE NO: 2]		"Hello World"
-SYM_B2       		39		[LINE NO: 2]		)
-SYM_SEMICOLON		33		[LINE NO: 2]		;
-KEYWD_RETURN 		50		[LINE NO: 3]		return
-[INT_LIT]			88		[LINE NO: 3]		0
-SYM_SEMICOLON		33		[LINE NO: 3]		;
-SYM_P2       		32		[LINE NO: 4]		}
+KEYWD_DEF    		66		LINE NO: 1		def
+IDENTIFIER			93		LINE NO: 1		main
+SYM_B1       		38		LINE NO: 1		(
+SYM_B2       		39		LINE NO: 1		)
+OP_FUNC      		41		LINE NO: 1		=>
+KEYWD_INT    		70		LINE NO: 1		int
+SYM_P1       		31		LINE NO: 1		{
+KEYWD_CHAR   		82		LINE NO: 3		char
+IDENTIFIER			93		LINE NO: 3		a
+OP_ASSGN     		34		LINE NO: 3		=
+[error]empty char literal not allowed	[LINE NO: 3]
+SYM_SEMICOLON		33		LINE NO: 3		;
+KEYWD_CHAR   		82		LINE NO: 4		char
+IDENTIFIER			93		LINE NO: 4		c1
+OP_ASSGN     		34		LINE NO: 4		=
+[error]missing terminating ' character	[LINE NO: 4]
+SYM_SEMICOLON		33		LINE NO: 4		;
+KEYWD_INT    		70		LINE NO: 5		int
+[error]unidentified token: [1abc]	[LINE NO: 5]
+OP_ASSGN     		34		LINE NO: 5		=
+[error]unidentified token: [`123]	[LINE NO: 5]
+KEYWD_STRING 		85		LINE NO: 6		string
+IDENTIFIER			93		LINE NO: 6		s1
+OP_ASSGN     		34		LINE NO: 6		=
+[error]missing terminating " character	[LINE NO: 6]
+KEYWD_RETURN 		50		LINE NO: 6		return
+[INT_LIT]			88		LINE NO: 6		0
+SYM_SEMICOLON		33		LINE NO: 6		;
+SYM_P2       		32		LINE NO: 7		}
