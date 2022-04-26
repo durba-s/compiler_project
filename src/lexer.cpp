@@ -55,7 +55,7 @@ void displayFile(string _fname){
     {"do"      ,{"KEYWD_DO     ",49} },
     {"return"  ,{"KEYWD_RETURN ",50} },
     {"break"   ,{"KEYWD_BREAK  ",61} },
-    {"continue",{"KEYWD_CONTINU",62} },
+    {"continue",{"KEYWD_CONTINUE",62} },
     {"select"  ,{"KEYWD_SELECT ",63} },
     {"case"    ,{"KEYWD_CASE   ",64} },
     {"default" ,{"KEYWD_DEFAULT",65} },
@@ -87,6 +87,8 @@ void displayFile(string _fname){
     ofstream lex_out(out_file);
     ofstream& err(lex_out);
 
+    ofstream tok_out("toks.txt");
+
     if(!openSourceFile(_fname))
         exit(EXIT_FAILURE); // throw error if file can't be opened
     lex_out <<"Category\t\tToken ID\t  Line No\t\t\tLexeme\n";
@@ -101,15 +103,18 @@ void displayFile(string _fname){
             if(isKeyword(lexeme)){
                 map<string, pair<string,int> >::iterator tok=st.find(lexeme);
                 lex_out << tok->second.first<<"\t\t"<<tok->second.second<<"\t\t";
+                tok_out <<tok->second.first<<endl;
             }
             else if(isIdentifier(lexeme)){
                 map<string, int >::iterator tok=st1.find("IDENTIFIER");
                 lex_out <<"IDENTIFIER\t\t\t"<<tok->second<<"\t\t";
+                tok_out <<"IDENTIFIER"<<endl;
             }
             else if(isOperator(lexeme)){
                 map<string, pair<string,int> >::iterator tok=st.find(lexeme);
                 if(tok!=st.end()){
                     lex_out << tok->second.first<<"\t\t" <<tok->second.second<<"\t\t";
+                    tok_out <<tok->second.first<<endl;
                 }
                 else{
                     ok=false;
@@ -119,6 +124,7 @@ void displayFile(string _fname){
                 map<string, pair<string,int> >::iterator tok=st.find(lexeme);
                 if(tok!=st.end()){
                     lex_out << tok->second.first<<"\t\t"<<tok->second.second<<"\t\t";
+                    tok_out <<tok->second.first<<endl;
                 }
                 else{
                     ok=false;
@@ -134,6 +140,7 @@ void displayFile(string _fname){
                 else{
                     map<string, int >::iterator tok=st1.find(type);
                     lex_out << "[" << type << "]\t\t\t"<<tok->second<<"\t\t";
+                    tok_out <<type<<endl;
                 }
             }
             if(ok)
@@ -141,6 +148,7 @@ void displayFile(string _fname){
         }
     }
       lex_out.close();
+      tok_out.close();
 
 
     closeSourceFile();

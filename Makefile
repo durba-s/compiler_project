@@ -14,7 +14,7 @@ TARGETS :=$(patsubst %,$(LIB)/%.o,$(SRCFILES))
 build: clean $(LIB) all
 
 all: $(TARGETS)
-	$(CC) -o ./qlexer $+ $(FLAGS)
+	$(CC) -o ./qube $+ $(FLAGS)
 
 $(LIB)/%.o: $(SRC)/%.cpp
 	$(CC) -c $^ -o $@ $(FLAGS)

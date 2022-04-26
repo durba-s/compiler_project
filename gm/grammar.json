@@ -1,0 +1,450 @@
+{
+    "1": {
+        "LHS": "<PROGRAM>",
+        "RHS": "  <DECL>"
+    },
+    "2": {
+        "LHS": "<PROGRAM>",
+        "RHS": "  <FUNCTION>"
+    },
+    "3": {
+        "LHS": "<PROGRAM>",
+        "RHS": "  <PROGRAM> <PROGRAM>"
+    },
+    "4": {
+        "LHS": "<PROGRAM>",
+        "RHS": "  '' "
+    },
+    "5": {
+        "LHS": "<STMTS>",
+        "RHS": " <STMT> <STMTS>"
+    },
+    "6": {
+        "LHS": "<STMTS>",
+        "RHS": " <STMT>"
+    },
+    "7": {
+        "LHS": "<CODE_BLOCK>",
+        "RHS": " <STMT>"
+    },
+    "8": {
+        "LHS": "<CODE_BLOCK>",
+        "RHS": " SYM_P1 <STMTS> SYM_P2"
+    },
+    "9": {
+        "LHS": "<STMT>",
+        "RHS": " <DECL>"
+    },
+    "10": {
+        "LHS": "<STMT>",
+        "RHS": " <ASSIGNMENT>"
+    },
+    "11": {
+        "LHS": "<STMT>",
+        "RHS": " <CONDITIONAL>"
+    },
+    "12": {
+        "LHS": "<STMT>",
+        "RHS": " <FOR>"
+    },
+    "13": {
+        "LHS": "<STMT>",
+        "RHS": " <WHILE>"
+    },
+    "14": {
+        "LHS": "<STMT>",
+        "RHS": " <DOWHILE>"
+    },
+    "15": {
+        "LHS": "<STMT>",
+        "RHS": " <JUMP>"
+    },
+    "16": {
+        "LHS": "<STMT>",
+        "RHS": " <SELECT>"
+    },
+    "17": {
+        "LHS": "<STMT>",
+        "RHS": " <EXPR> SYM_SEMICOLON"
+    },
+    "18": {
+        "LHS": "<DECL>",
+        "RHS": " <SCOPE> <MODIFIER> <TYPE> <DECL_LIST> SYM_SEMICOLON"
+    },
+    "19": {
+        "LHS": "<DECL_LIST>",
+        "RHS": " IDENTIFIER"
+    },
+    "20": {
+        "LHS": "<DECL_LIST>",
+        "RHS": " IDENTIFIER OP_ASSGN <EXPR>"
+    },
+    "21": {
+        "LHS": "<DECL_LIST>",
+        "RHS": " <DECL_LIST> OP_COMMA <DECL_LIST>"
+    },
+    "22": {
+        "LHS": "<ASSIGNMENT>",
+        "RHS": " IDENTIFIER OP_ASSGN <EXPR> SYM_SEMICOLON"
+    },
+    "23": {
+        "LHS": "<ASSIGNMENT>",
+        "RHS": " IDENTIFIER IDENTIFIER SYM_SB1 <DIM> SYM_SB2 OP_ASSGN <EXPR> SYM_SEMICOLON"
+    },
+    "24": {
+        "LHS": "<ASSIGNMENT>",
+        "RHS": " IDENTIFIER IDENTIFIER SHORT_OP <EXPR> SYM_SEMICOLON"
+    },
+    "25": {
+        "LHS": "<ASSIGNMENT>",
+        "RHS": " IDENTIFIER IDENTIFIER SYM_SB1 <DIM> SYM_SB2 SHORT_OP <EXPR> SYM_SEMICOLON"
+    },
+    "26": {
+        "LHS": "<CONDITIONAL>",
+        "RHS": " KEYWD_IF SYM_B1 <EXPR> SYM_B2 <CODE_BLOCK> <ELIF>"
+    },
+    "27": {
+        "LHS": "<CONDITIONAL>",
+        "RHS": " KEYWD_IF SYM_B1 <EXPR> SYM_B2 <CODE_BLOCK> <ELIF> KEYWD_ELSE <CODE_BLOCK>"
+    },
+    "28": {
+        "LHS": "<ELIF>",
+        "RHS": " KEYWD_ELIF SYM_B1 <EXPR> SYM_B2 <CODE_BLOCK> <ELIF>"
+    },
+    "29": {
+        "LHS": "<CONDITIONAL>",
+        "RHS": " ''"
+    },
+    "30": {
+        "LHS": "<FOR>",
+        "RHS": " KEYWD_FOR IDENTIFIER KEYWD_IN SYM_B1 <EXPR> OP_COMMA <EXPR> SYM_B2 <CODE_BLOCK>"
+    },
+    "31": {
+        "LHS": "<WHILE>",
+        "RHS": " KEYWD_WHILE SYM_B1 <EXPR> SYM_B2 <CODE_BLOCK>"
+    },
+    "32": {
+        "LHS": "<DOWHILE> ",
+        "RHS": "KEYWD_DO <CODE_BLOCK> KEYWD_WHILE SYM_B1 <EXPR> SYM_B2 SYM_SEMICOLON"
+    },
+    "33": {
+        "LHS": "<JUMP>",
+        "RHS": " KEYWD_RETURN <EXPR> SYM_SEMICOLON"
+    },
+    "34": {
+        "LHS": "<JUMP>",
+        "RHS": " KEYWD_BREAK SYM_SEMICOLON"
+    },
+    "35": {
+        "LHS": "<JUMP>",
+        "RHS": " KEYWD_CONTINUE SYM_SEMICOLON"
+    },
+    "36": {
+        "LHS": "<SELECT>",
+        "RHS": " KEYWD_SELECT SYM_B1 <EXPR> SYM_B2 SYM_P1 <CASE_LIST> SYM_P2"
+    },
+    "37": {
+        "LHS": "<CASE_LIST>",
+        "RHS": " KEYWD_CASE <EXPR> OP_TERN1 <STMTS> <CASE_LIST>"
+    },
+    "38": {
+        "LHS": "<CASE_LIST>",
+        "RHS": " KEYWD_DEFAULT OP_TERN1 <STMTS>"
+    },
+    "39": {
+        "LHS": "<CASE_LIST>",
+        "RHS": " ''"
+    },
+    "40": {
+        "LHS": "<FUNCTION>",
+        "RHS": " KEYWD_DEF IDENTIFIER SYM_B1 <ARG_LIST> SYM_B2 OP_FUNC <TYPE> SYM_P1 <STMTS> SYM_P2"
+    },
+    "41": {
+        "LHS": "<ARG_LIST>",
+        "RHS": " <TYPE> IDENTIFIER OP_COMMA <ARG_LIST>"
+    },
+    "42": {
+        "LHS": "<ARG_LIST>",
+        "RHS": " <TYPE> IDENTIFIER"
+    },
+    "43": {
+        "LHS": "<ARG_LIST>",
+        "RHS": " ''"
+    },
+    "44": {
+        "LHS": "<FUNCTION_CALL>",
+        "RHS": " IDENTIFIER SYM_B1 <PARAM_LIST> SYM_B2"
+    },
+    "45": {
+        "LHS": "<PARAM_LIST>",
+        "RHS": " <EXPR> OP_COMMA <PARAM_LIST>"
+    },
+    "46": {
+        "LHS": "<PARAM_LIST>",
+        "RHS": " ''"
+    },
+    "47": {
+        "LHS": "<SCOPE>",
+        "RHS": " KEYWD_GLOBAL"
+    },
+    "48": {
+        "LHS": "<SCOPE>",
+        "RHS": " ''"
+    },
+    "49": {
+        "LHS": "<MODIFIER>",
+        "RHS": " KEYWD_STATIC"
+    },
+    "50": {
+        "LHS": "<MODIFIER>",
+        "RHS": " KEYWD_CONST"
+    },
+    "51": {
+        "LHS": "<MODIFIER>",
+        "RHS": " KEYWD_STATIC KEYWD_CONST"
+    },
+    "52": {
+        "LHS": "<MODIFIER>",
+        "RHS": " KEYWD_CONST KEYWD_STATIC"
+    },
+    "53": {
+        "LHS": "<MODIFIER>",
+        "RHS": " ''"
+    },
+    "54": {
+        "LHS": "<TYPE>",
+        "RHS": " <D_TYPE>"
+    },
+    "55": {
+        "LHS": "<TYPE>",
+        "RHS": " <D_TYPE> SYM_SB1 <DIM> SYM_SB2"
+    },
+    "56": {
+        "LHS": "<DIM>",
+        "RHS": " <EXPR> OP_COMMA <DIM>"
+    },
+    "57": {
+        "LHS": "<DIM>",
+        "RHS": " <EXPR>"
+    },
+    "58": {
+        "LHS": "<DIM>",
+        "RHS": " ''"
+    },
+    "59": {
+        "LHS": "<D_TYPE>",
+        "RHS": " KEYWD_INT "
+    },
+    "60": {
+        "LHS": "<D_TYPE>",
+        "RHS": " KEYWD_FLOAT"
+    },
+    "61": {
+        "LHS": "<D_TYPE>",
+        "RHS": " KEYWD_CHAR"
+    },
+    "62": {
+        "LHS": "<D_TYPE>",
+        "RHS": " KEYWD_BOOL"
+    },
+    "63": {
+        "LHS": "<D_TYPE>",
+        "RHS": " KEYWD_VOID "
+    },
+    "64": {
+        "LHS": "<D_TYPE>",
+        "RHS": " KEYWD_STRING"
+    },
+    "65": {
+        "LHS": "<EXPR>",
+        "RHS": " <EXPR> OP_TERN2 <EXPR> OP_TERN1 <EXPR>"
+    },
+    "66": {
+        "LHS": "<EXPR>",
+        "RHS": " <EXPR> BIN_OP <EXPR>"
+    },
+    "67": {
+        "LHS": "<EXPR>",
+        "RHS": " <PREFIX> <EXPR>"
+    },
+    "68": {
+        "LHS": "<EXPR>",
+        "RHS": " <EXPR> <POSTFIX>"
+    },
+    "69": {
+        "LHS": "<EXPR>",
+        "RHS": " SYM_B1 <EXPR> SYM_B2"
+    },
+    "70": {
+        "LHS": "<EXPR>",
+        "RHS": " <FUNCTION_CALL>"
+    },
+    "71": {
+        "LHS": "<EXPR>",
+        "RHS": " IDENTIFIER"
+    },
+    "72": {
+        "LHS": "<EXPR>",
+        "RHS": " <LITERAL>"
+    },
+    "73": {
+        "LHS": "<EXPR>",
+        "RHS": " SYM_P1 <LIST> SYM_P2"
+    },
+    "74": {
+        "LHS": "<LIST>",
+        "RHS": " <EXPR> OP_COMMA <LIST>"
+    },
+    "75": {
+        "LHS": "<LIST>",
+        "RHS": " <EXPR>"
+    },
+    "76": {
+        "LHS": "<LITERAL>",
+        "RHS": " INT_LIT"
+    },
+    "77": {
+        "LHS": "<LITERAL>",
+        "RHS": " FLOAT_LITERAL"
+    },
+    "78": {
+        "LHS": "<LITERAL>",
+        "RHS": " CHAR_LIT"
+    },
+    "79": {
+        "LHS": "<LITERAL>",
+        "RHS": " BOOL_LIT"
+    },
+    "80": {
+        "LHS": "<LITERAL>",
+        "RHS": " STR_LIT"
+    },
+    "81": {
+        "LHS": "<BOOL_LIT>",
+        "RHS": " KEYWD_TRUE"
+    },
+    "82": {
+        "LHS": "<BOOL_LIT>",
+        "RHS": " KEYWD_FALSE"
+    },
+    "83": {
+        "LHS": "<BIN_OP>",
+        "RHS": " <ARTM_OP>"
+    },
+    "84": {
+        "LHS": "<BIN_OP>",
+        "RHS": " <REL_OP>"
+    },
+    "85": {
+        "LHS": "<BIN_OP>",
+        "RHS": " <LOGCL_OP>"
+    },
+    "86": {
+        "LHS": "<BIN_OP>",
+        "RHS": " <BIT_OP>"
+    },
+    "87": {
+        "LHS": "<ARTM_OP>",
+        "RHS": " OP_AR_add "
+    },
+    "88": {
+        "LHS": "<ARTM_OP>",
+        "RHS": " OP_AR_sub "
+    },
+    "89": {
+        "LHS": "<ARTM_OP>",
+        "RHS": " OP_AR_mul "
+    },
+    "90": {
+        "LHS": "<ARTM_OP>",
+        "RHS": " OP_AR_div"
+    },
+    "91": {
+        "LHS": "<ARTM_OP>",
+        "RHS": " OP_AR_mod"
+    },
+    "92": {
+        "LHS": "<REL_OP>",
+        "RHS": " OP_REL_gt "
+    },
+    "93": {
+        "LHS": "<REL_OP>",
+        "RHS": " OP_REL_ge "
+    },
+    "94": {
+        "LHS": "<REL_OP>",
+        "RHS": " OP_REL_lt"
+    },
+    "95": {
+        "LHS": "<REL_OP>",
+        "RHS": " OP_REL_le "
+    },
+    "96": {
+        "LHS": "<REL_OP>",
+        "RHS": " OP_REL_eq"
+    },
+    "97": {
+        "LHS": "<REL_OP>",
+        "RHS": " OP_REL_neq"
+    },
+    "98": {
+        "LHS": "<LOGCL_OP>",
+        "RHS": " OP_LOG_and"
+    },
+    "99": {
+        "LHS": "<LOGCL_OP>",
+        "RHS": " OP_LOG_or"
+    },
+    "100": {
+        "LHS": "<LOGCL_OP>",
+        "RHS": " OP_LOG_not"
+    },
+    "101": {
+        "LHS": "<BIT_OP>",
+        "RHS": " OP_BIT_and"
+    },
+    "102": {
+        "LHS": "<BIT_OP>",
+        "RHS": " OP_BIT_or"
+    },
+    "103": {
+        "LHS": "<BIT_OP>",
+        "RHS": " OP_BIT_ls"
+    },
+    "104": {
+        "LHS": "<BIT_OP>",
+        "RHS": " OP_BIT_rs"
+    },
+    "105": {
+        "LHS": "<BIT_OP>",
+        "RHS": " OP_BIT_xor"
+    },
+    "106": {
+        "LHS": "<PREFIX>",
+        "RHS": " OP_INCR"
+    },
+    "107": {
+        "LHS": "<PREFIX>",
+        "RHS": " OP_DECR"
+    },
+    "108": {
+        "LHS": "<PREFIX>",
+        "RHS": " OP_BIT4"
+    },
+    "109": {
+        "LHS": "<PREFIX>",
+        "RHS": " OP_AR_add"
+    },
+    "110": {
+        "LHS": "<PREFIX>",
+        "RHS": " OP_AR_sub"
+    },
+    "111": {
+        "LHS": "<POSTFIX> ",
+        "RHS": " OP_INCR"
+    },
+    "112": {
+        "LHS": "<POSTFIX> ",
+        "RHS": " OP_DECR"
+    }
+}
