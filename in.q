@@ -1,4 +1,8 @@
-def main() => int{
-    print("Hello World");
-    return 0;
+def main() => void{
+    if(a) {
+        b=5;
+    }
+    else {
+        c=10;
+    }
 }

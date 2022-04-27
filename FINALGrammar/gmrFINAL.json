@@ -21,9 +21,7 @@
   },
   "3": {
     "LHS": "PROGRAM",
-    "RHS": [
-      "''"
-    ]
+    "RHS": []
   },
   "4": {
     "LHS": "STMTS",
@@ -165,34 +163,11 @@
       "EXPR",
       "SYM_B2",
       "CODE_BLOCK",
-      "ELIF"
-    ]
-  },
-  "23": {
-    "LHS": "CONDITIONAL",
-    "RHS": [
-      "KEYWD_IF",
-      "SYM_B1",
-      "EXPR",
-      "SYM_B2",
-      "CODE_BLOCK",
-      "ELIF",
       "KEYWD_ELSE",
       "CODE_BLOCK"
     ]
   },
-  "24": {
-    "LHS": "ELIF",
-    "RHS": [
-      "KEYWD_ELIF",
-      "SYM_B1",
-      "EXPR",
-      "SYM_B2",
-      "CODE_BLOCK",
-      "ELIF"
-    ]
-  },
-  "25": {
+  "23": {
     "LHS": "FOR",
     "RHS": [
       "KEYWD_FOR",
@@ -206,7 +181,7 @@
       "CODE_BLOCK"
     ]
   },
-  "26": {
+  "24": {
     "LHS": "WHILE",
     "RHS": [
       "KEYWD_WHILE",
@@ -216,7 +191,7 @@
       "CODE_BLOCK"
     ]
   },
-  "27": {
+  "25": {
     "LHS": "DOWHILE",
     "RHS": [
       "KEYWD_DO",
@@ -228,7 +203,7 @@
       "SYM_SEMICOLON"
     ]
   },
-  "28": {
+  "26": {
     "LHS": "JUMP",
     "RHS": [
       "KEYWD_RETURN",
@@ -236,21 +211,21 @@
       "SYM_SEMICOLON"
     ]
   },
-  "29": {
+  "27": {
     "LHS": "JUMP",
     "RHS": [
       "KEYWD_BREAK",
       "SYM_SEMICOLON"
     ]
   },
-  "30": {
+  "28": {
     "LHS": "JUMP",
     "RHS": [
       "KEYWD_CONTINUE",
       "SYM_SEMICOLON"
     ]
   },
-  "31": {
+  "29": {
     "LHS": "SELECT",
     "RHS": [
       "KEYWD_SELECT",
@@ -262,7 +237,7 @@
       "SYM_P2"
     ]
   },
-  "32": {
+  "30": {
     "LHS": "CASE_LIST",
     "RHS": [
       "KEYWD_CASE",
@@ -272,7 +247,7 @@
       "CASE_LIST"
     ]
   },
-  "33": {
+  "31": {
     "LHS": "CASE_LIST",
     "RHS": [
       "KEYWD_DEFAULT",
@@ -280,13 +255,11 @@
       "STMTS"
     ]
   },
-  "34": {
+  "32": {
     "LHS": "CASE_LIST",
-    "RHS": [
-      "''"
-    ]
+    "RHS": []
   },
-  "35": {
+  "33": {
     "LHS": "FUNCTION",
     "RHS": [
       "KEYWD_DEF",
@@ -301,7 +274,7 @@
       "SYM_P2"
     ]
   },
-  "36": {
+  "34": {
     "LHS": "ARG_LIST",
     "RHS": [
       "TYPE",
@@ -310,20 +283,18 @@
       "ARG_LIST"
     ]
   },
-  "37": {
+  "35": {
     "LHS": "ARG_LIST",
     "RHS": [
       "TYPE",
       "IDENTIFIER"
     ]
   },
-  "38": {
+  "36": {
     "LHS": "ARG_LIST",
-    "RHS": [
-      "''"
-    ]
+    "RHS": []
   },
-  "39": {
+  "37": {
     "LHS": "FUNCTION_CALL",
     "RHS": [
       "IDENTIFIER",
@@ -332,25 +303,23 @@
       "SYM_B2"
     ]
   },
-  "40": {
+  "38": {
     "LHS": "PARAM_LIST",
     "RHS": [
       "PARAMS"
     ]
   },
-  "41": {
+  "39": {
     "LHS": "PARAM_LIST",
-    "RHS": [
-      "''"
-    ]
+    "RHS": []
   },
-  "42": {
+  "40": {
     "LHS": "PARAMS",
     "RHS": [
       "EXPR"
     ]
   },
-  "43": {
+  "41": {
     "LHS": "PARAMS",
     "RHS": [
       "EXPR",
@@ -358,13 +327,13 @@
       "EXPR"
     ]
   },
-  "44": {
+  "42": {
     "LHS": "TYPE",
     "RHS": [
       "D_TYPE"
     ]
   },
-  "45": {
+  "43": {
     "LHS": "TYPE",
     "RHS": [
       "D_TYPE",
@@ -373,7 +342,7 @@
       "SYM_SB2"
     ]
   },
-  "46": {
+  "44": {
     "LHS": "DIM",
     "RHS": [
       "EXPR",
@@ -381,55 +350,53 @@
       "DIM"
     ]
   },
-  "47": {
+  "45": {
     "LHS": "DIM",
     "RHS": [
       "EXPR"
     ]
   },
-  "48": {
+  "46": {
     "LHS": "DIM",
-    "RHS": [
-      "''"
-    ]
+    "RHS": []
   },
-  "49": {
+  "47": {
     "LHS": "D_TYPE",
     "RHS": [
       "KEYWD_INT"
     ]
   },
-  "50": {
+  "48": {
     "LHS": "D_TYPE",
     "RHS": [
       "KEYWD_FLOAT"
     ]
   },
-  "51": {
+  "49": {
     "LHS": "D_TYPE",
     "RHS": [
       "KEYWD_CHAR"
     ]
   },
-  "52": {
+  "50": {
     "LHS": "D_TYPE",
     "RHS": [
       "KEYWD_BOOL"
     ]
   },
-  "53": {
+  "51": {
     "LHS": "D_TYPE",
     "RHS": [
       "KEYWD_VOID"
     ]
   },
-  "54": {
+  "52": {
     "LHS": "D_TYPE",
     "RHS": [
       "KEYWD_STRING"
     ]
   },
-  "55": {
+  "53": {
     "LHS": "EXPR",
     "RHS": [
       "SYM_B1",
@@ -439,32 +406,32 @@
       "SYM_B2"
     ]
   },
-  "56": {
+  "54": {
     "LHS": "EXPR",
     "RHS": [
       "PREFIX",
       "EXPR"
     ]
   },
-  "57": {
+  "55": {
     "LHS": "EXPR",
     "RHS": [
       "FUNCTION_CALL"
     ]
   },
-  "58": {
+  "56": {
     "LHS": "EXPR",
     "RHS": [
       "IDENTIFIER"
     ]
   },
-  "59": {
+  "57": {
     "LHS": "EXPR",
     "RHS": [
       "LITERAL"
     ]
   },
-  "60": {
+  "58": {
     "LHS": "EXPR",
     "RHS": [
       "SYM_P1",
@@ -472,7 +439,7 @@
       "SYM_P2"
     ]
   },
-  "61": {
+  "59": {
     "LHS": "LIST",
     "RHS": [
       "EXPR",
@@ -480,265 +447,265 @@
       "LIST"
     ]
   },
-  "62": {
+  "60": {
     "LHS": "LIST",
     "RHS": [
       "EXPR"
     ]
   },
-  "63": {
+  "61": {
     "LHS": "LITERAL",
     "RHS": [
       "INT_LIT"
     ]
   },
-  "64": {
+  "62": {
     "LHS": "LITERAL",
     "RHS": [
       "FLOAT_LITERAL"
     ]
   },
-  "65": {
+  "63": {
     "LHS": "LITERAL",
     "RHS": [
       "CHAR_LIT"
     ]
   },
-  "66": {
+  "64": {
     "LHS": "LITERAL",
     "RHS": [
       "BOOL_LIT"
     ]
   },
-  "67": {
+  "65": {
     "LHS": "LITERAL",
     "RHS": [
       "STR_LIT"
     ]
   },
-  "68": {
+  "66": {
     "LHS": "BOOL_LIT",
     "RHS": [
       "KEYWD_TRUE"
     ]
   },
-  "69": {
+  "67": {
     "LHS": "BOOL_LIT",
     "RHS": [
       "KEYWD_FALSE"
     ]
   },
-  "70": {
+  "68": {
     "LHS": "BIN_OP",
     "RHS": [
       "ARTM_OP"
     ]
   },
-  "71": {
+  "69": {
     "LHS": "BIN_OP",
     "RHS": [
       "REL_OP"
     ]
   },
-  "72": {
+  "70": {
     "LHS": "BIN_OP",
     "RHS": [
       "LOGCL_OP"
     ]
   },
-  "73": {
+  "71": {
     "LHS": "BIN_OP",
     "RHS": [
       "BIT_OP"
     ]
   },
-  "74": {
+  "72": {
     "LHS": "ARTM_OP",
     "RHS": [
       "OP_AR_add"
     ]
   },
-  "75": {
+  "73": {
     "LHS": "ARTM_OP",
     "RHS": [
       "OP_AR_sub"
     ]
   },
-  "76": {
+  "74": {
     "LHS": "ARTM_OP",
     "RHS": [
       "OP_AR_mul"
     ]
   },
-  "77": {
+  "75": {
     "LHS": "ARTM_OP",
     "RHS": [
       "OP_AR_div"
     ]
   },
-  "78": {
+  "76": {
     "LHS": "ARTM_OP",
     "RHS": [
       "OP_AR_mod"
     ]
   },
-  "79": {
+  "77": {
     "LHS": "REL_OP",
     "RHS": [
       "OP_REL_gt"
     ]
   },
-  "80": {
+  "78": {
     "LHS": "REL_OP",
     "RHS": [
       "OP_REL_ge"
     ]
   },
-  "81": {
+  "79": {
     "LHS": "REL_OP",
     "RHS": [
       "OP_REL_lt"
     ]
   },
-  "82": {
+  "80": {
     "LHS": "REL_OP",
     "RHS": [
       "OP_REL_le"
     ]
   },
-  "83": {
+  "81": {
     "LHS": "REL_OP",
     "RHS": [
       "OP_REL_eq"
     ]
   },
-  "84": {
+  "82": {
     "LHS": "REL_OP",
     "RHS": [
       "OP_REL_neq"
     ]
   },
-  "85": {
+  "83": {
     "LHS": "LOGCL_OP",
     "RHS": [
       "OP_LOG_and"
     ]
   },
-  "86": {
+  "84": {
     "LHS": "LOGCL_OP",
     "RHS": [
       "OP_LOG_or"
     ]
   },
-  "87": {
+  "85": {
     "LHS": "LOGCL_OP",
     "RHS": [
       "OP_LOG_not"
     ]
   },
-  "88": {
+  "86": {
     "LHS": "BIT_OP",
     "RHS": [
       "OP_BIT_and"
     ]
   },
-  "89": {
+  "87": {
     "LHS": "BIT_OP",
     "RHS": [
       "OP_BIT_or"
     ]
   },
-  "90": {
+  "88": {
     "LHS": "BIT_OP",
     "RHS": [
       "OP_BIT_ls"
     ]
   },
-  "91": {
+  "89": {
     "LHS": "BIT_OP",
     "RHS": [
       "OP_BIT_rs"
     ]
   },
-  "92": {
+  "90": {
     "LHS": "BIT_OP",
     "RHS": [
       "OP_BIT_xor"
     ]
   },
-  "93": {
+  "91": {
     "LHS": "SHORT_OP",
     "RHS": [
       "OP_ASSGN1"
     ]
   },
-  "94": {
+  "92": {
     "LHS": "SHORT_OP",
     "RHS": [
       "OP_ASSGN2"
     ]
   },
-  "95": {
+  "93": {
     "LHS": "SHORT_OP",
     "RHS": [
       "OP_ASSGN3"
     ]
   },
-  "96": {
+  "94": {
     "LHS": "SHORT_OP",
     "RHS": [
       "OP_ASSGN4"
     ]
   },
-  "97": {
+  "95": {
     "LHS": "SHORT_OP",
     "RHS": [
       "OP_ASSGN5"
     ]
   },
-  "98": {
+  "96": {
     "LHS": "SHORT_OP",
     "RHS": [
       "OP_ASSGN6"
     ]
   },
-  "99": {
+  "97": {
     "LHS": "SHORT_OP",
     "RHS": [
       "OP_ASSGN7"
     ]
   },
-  "100": {
+  "98": {
     "LHS": "SHORT_OP",
     "RHS": [
       "OP_ASSGN8"
     ]
   },
-  "101": {
+  "99": {
     "LHS": "PREFIX",
     "RHS": [
       "OP_INCR"
     ]
   },
-  "102": {
+  "100": {
     "LHS": "PREFIX",
     "RHS": [
       "OP_DECR"
     ]
   },
-  "103": {
+  "101": {
     "LHS": "PREFIX",
     "RHS": [
       "OP_BIT4"
     ]
   },
-  "104": {
+  "102": {
     "LHS": "PREFIX",
     "RHS": [
       "OP_AR_add"
     ]
   },
-  "105": {
+  "103": {
     "LHS": "PREFIX",
     "RHS": [
       "OP_AR_sub"

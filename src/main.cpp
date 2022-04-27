@@ -3,7 +3,7 @@
 #include "parser.h"
 int main(int argc, char *argv[]) {
     string fn = readFN(argc,argv);
-    displayFile(fn);
-    parser();
+    vector<string> tl = displayFile(fn);
+    parser(tl);
     return 0;
 }
