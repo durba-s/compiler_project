@@ -1,0 +1,18 @@
+Category		Token ID	  Line No			Lexeme
+--------------------------------------------------------------------
+KEYWD_DEF    		66		LINE NO: 1		def
+IDENTIFIER			93		LINE NO: 1		main
+SYM_B1       		38		LINE NO: 1		(
+SYM_B2       		39		LINE NO: 1		)
+OP_FUNC      		41		LINE NO: 1		=>
+KEYWD_VOID   		84		LINE NO: 1		void
+SYM_P1       		31		LINE NO: 1		{
+KEYWD_INT    		70		LINE NO: 2		int
+IDENTIFIER			93		LINE NO: 2		a
+SYM_SEMICOLON		33		LINE NO: 2		;
+KEYWD_INT    		70		LINE NO: 3		int
+IDENTIFIER			93		LINE NO: 4		b
+KEYWD_INT    		70		LINE NO: 4		int
+IDENTIFIER			93		LINE NO: 4		c
+SYM_SEMICOLON		33		LINE NO: 4		;
+SYM_P2       		32		LINE NO: 5		}

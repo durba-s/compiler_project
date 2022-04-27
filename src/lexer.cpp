@@ -1,6 +1,11 @@
 #include "lexer.h"
-
-void displayFile(string _fname){
+vector<pair<string,string> > tok_list;
+string removeSpaces(string str)
+{
+    str.erase(remove(str.begin(), str.end(), ' '), str.end());
+    return str;
+}
+vector<pair<string,string> >  displayFile(string _fname){
     
     // A std::map which stores token-IDs.
     map<string, pair<string,int> > st = {
@@ -104,17 +109,20 @@ void displayFile(string _fname){
                 map<string, pair<string,int> >::iterator tok=st.find(lexeme);
                 lex_out << tok->second.first<<"\t\t"<<tok->second.second<<"\t\t";
                 tok_out <<tok->second.first<<endl;
+                tok_list.push_back(make_pair(removeSpaces(tok->second.first),lexeme));
             }
             else if(isIdentifier(lexeme)){
                 map<string, int >::iterator tok=st1.find("IDENTIFIER");
                 lex_out <<"IDENTIFIER\t\t\t"<<tok->second<<"\t\t";
                 tok_out <<"IDENTIFIER"<<endl;
+                tok_list.push_back(make_pair("IDENTIFIER",lexeme));
             }
             else if(isOperator(lexeme)){
                 map<string, pair<string,int> >::iterator tok=st.find(lexeme);
                 if(tok!=st.end()){
                     lex_out << tok->second.first<<"\t\t" <<tok->second.second<<"\t\t";
                     tok_out <<tok->second.first<<endl;
+                    tok_list.push_back(make_pair(removeSpaces(tok->second.first),lexeme));
                 }
                 else{
                     ok=false;
@@ -125,6 +133,7 @@ void displayFile(string _fname){
                 if(tok!=st.end()){
                     lex_out << tok->second.first<<"\t\t"<<tok->second.second<<"\t\t";
                     tok_out <<tok->second.first<<endl;
+                    tok_list.push_back(make_pair(removeSpaces(tok->second.first),lexeme));
                 }
                 else{
                     ok=false;
@@ -141,6 +150,7 @@ void displayFile(string _fname){
                     map<string, int >::iterator tok=st1.find(type);
                     lex_out << "[" << type << "]\t\t\t"<<tok->second<<"\t\t";
                     tok_out <<type<<endl;
+                    tok_list.push_back(make_pair(removeSpaces(type),lexeme));
                 }
             }
             if(ok)
@@ -152,4 +162,5 @@ void displayFile(string _fname){
 
 
     closeSourceFile();
+    return tok_list;
 }

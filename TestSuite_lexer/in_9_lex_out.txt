@@ -1,0 +1,20 @@
+Category		Token ID	  Line No			Lexeme
+--------------------------------------------------------------------
+KEYWD_DEF    		66		LINE NO: 1		def
+IDENTIFIER			93		LINE NO: 1		main
+SYM_B1       		38		LINE NO: 1		(
+SYM_B2       		39		LINE NO: 1		)
+OP_FUNC      		41		LINE NO: 1		=>
+KEYWD_INT    		70		LINE NO: 1		int
+SYM_P1       		31		LINE NO: 1		{
+KEYWD_INT    		70		LINE NO: 2		int
+IDENTIFIER			93		LINE NO: 2		a
+OP_ASSGN     		34		LINE NO: 2		=
+[error]unidentified token: [`12]	[LINE NO: 2]
+IDENTIFIER			93		LINE NO: 3		print
+SYM_B1       		38		LINE NO: 3		(
+[error]missing terminating " character	[LINE NO: 3]
+KEYWD_RETURN 		50		LINE NO: 3		return
+[INT_LIT]			88		LINE NO: 3		0
+SYM_SEMICOLON		33		LINE NO: 3		;
+SYM_P2       		32		LINE NO: 4		}

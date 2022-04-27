@@ -1,0 +1,332 @@
+null
+{
+	"LHS" : "PROGRAM",
+	"RHS" : 
+	[
+		"FUNCTION",
+		"PROGRAM"
+	]
+}
+{
+	"LHS" : "PROGRAM",
+	"RHS" : []
+}
+{
+	"LHS" : "FUNCTION",
+	"RHS" : 
+	[
+		"KEYWD_DEF",
+		"IDENTIFIER",
+		"SYM_B1",
+		"ARG_LIST",
+		"SYM_B2",
+		"OP_FUNC",
+		"TYPE",
+		"SYM_P1",
+		"STMTS",
+		"SYM_P2"
+	]
+}
+{
+	"LHS" : "STMTS",
+	"RHS" : 
+	[
+		"STMT",
+		"STMTS"
+	]
+}
+{
+	"LHS" : "STMTS",
+	"RHS" : 
+	[
+		"STMT",
+		"STMTS"
+	]
+}
+{
+	"LHS" : "STMTS",
+	"RHS" : 
+	[
+		"STMT",
+		"STMTS"
+	]
+}
+{
+	"LHS" : "STMTS",
+	"RHS" : 
+	[
+		"STMT",
+		"STMTS"
+	]
+}
+{
+	"LHS" : "STMTS",
+	"RHS" : 
+	[
+		"STMT",
+		"STMTS"
+	]
+}
+{
+	"LHS" : "STMTS",
+	"RHS" : 
+	[
+		"STMT"
+	]
+}
+{
+	"LHS" : "STMT",
+	"RHS" : 
+	[
+		"JUMP"
+	]
+}
+{
+	"LHS" : "JUMP",
+	"RHS" : 
+	[
+		"KEYWD_RETURN",
+		"EXPR",
+		"SYM_SEMICOLON"
+	]
+}
+{
+	"LHS" : "EXPR",
+	"RHS" : 
+	[
+		"LITERAL"
+	]
+}
+{
+	"LHS" : "LITERAL",
+	"RHS" : 
+	[
+		"INT_LIT"
+	]
+}
+{
+	"LHS" : "STMT",
+	"RHS" : 
+	[
+		"ASSIGNMENT"
+	]
+}
+{
+	"LHS" : "ASSIGNMENT",
+	"RHS" : 
+	[
+		"IDENTIFIER",
+		"OP_ASSGN",
+		"EXPR",
+		"SYM_SEMICOLON"
+	]
+}
+{
+	"LHS" : "EXPR",
+	"RHS" : 
+	[
+		"SYM_B1",
+		"EXPR",
+		"BIN_OP",
+		"EXPR",
+		"SYM_B2"
+	]
+}
+{
+	"LHS" : "EXPR",
+	"RHS" : 
+	[
+		"IDENTIFIER"
+	]
+}
+{
+	"LHS" : "BIN_OP",
+	"RHS" : 
+	[
+		"ARTM_OP"
+	]
+}
+{
+	"LHS" : "ARTM_OP",
+	"RHS" : 
+	[
+		"OP_AR_add"
+	]
+}
+{
+	"LHS" : "EXPR",
+	"RHS" : 
+	[
+		"SYM_B1",
+		"EXPR",
+		"BIN_OP",
+		"EXPR",
+		"SYM_B2"
+	]
+}
+{
+	"LHS" : "EXPR",
+	"RHS" : 
+	[
+		"IDENTIFIER"
+	]
+}
+{
+	"LHS" : "BIN_OP",
+	"RHS" : 
+	[
+		"ARTM_OP"
+	]
+}
+{
+	"LHS" : "ARTM_OP",
+	"RHS" : 
+	[
+		"OP_AR_mul"
+	]
+}
+{
+	"LHS" : "EXPR",
+	"RHS" : 
+	[
+		"IDENTIFIER"
+	]
+}
+{
+	"LHS" : "STMT",
+	"RHS" : 
+	[
+		"DECL"
+	]
+}
+{
+	"LHS" : "DECL",
+	"RHS" : 
+	[
+		"TYPE",
+		"IDENTIFIER",
+		"SYM_SEMICOLON"
+	]
+}
+{
+	"LHS" : "TYPE",
+	"RHS" : 
+	[
+		"D_TYPE"
+	]
+}
+{
+	"LHS" : "D_TYPE",
+	"RHS" : 
+	[
+		"KEYWD_INT"
+	]
+}
+{
+	"LHS" : "STMT",
+	"RHS" : 
+	[
+		"DECL"
+	]
+}
+{
+	"LHS" : "DECL",
+	"RHS" : 
+	[
+		"TYPE",
+		"IDENTIFIER",
+		"SYM_SEMICOLON"
+	]
+}
+{
+	"LHS" : "TYPE",
+	"RHS" : 
+	[
+		"D_TYPE"
+	]
+}
+{
+	"LHS" : "D_TYPE",
+	"RHS" : 
+	[
+		"KEYWD_INT"
+	]
+}
+{
+	"LHS" : "STMT",
+	"RHS" : 
+	[
+		"DECL"
+	]
+}
+{
+	"LHS" : "DECL",
+	"RHS" : 
+	[
+		"TYPE",
+		"IDENTIFIER",
+		"SYM_SEMICOLON"
+	]
+}
+{
+	"LHS" : "TYPE",
+	"RHS" : 
+	[
+		"D_TYPE"
+	]
+}
+{
+	"LHS" : "D_TYPE",
+	"RHS" : 
+	[
+		"KEYWD_INT"
+	]
+}
+{
+	"LHS" : "STMT",
+	"RHS" : 
+	[
+		"DECL"
+	]
+}
+{
+	"LHS" : "DECL",
+	"RHS" : 
+	[
+		"TYPE",
+		"IDENTIFIER",
+		"SYM_SEMICOLON"
+	]
+}
+{
+	"LHS" : "TYPE",
+	"RHS" : 
+	[
+		"D_TYPE"
+	]
+}
+{
+	"LHS" : "D_TYPE",
+	"RHS" : 
+	[
+		"KEYWD_INT"
+	]
+}
+{
+	"LHS" : "TYPE",
+	"RHS" : 
+	[
+		"D_TYPE"
+	]
+}
+{
+	"LHS" : "D_TYPE",
+	"RHS" : 
+	[
+		"KEYWD_INT"
+	]
+}
+{
+	"LHS" : "ARG_LIST",
+	"RHS" : []
+}

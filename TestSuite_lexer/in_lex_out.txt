@@ -1,0 +1,18 @@
+Category		Token ID	  Line No			Lexeme
+--------------------------------------------------------------------
+KEYWD_DEF    		66		LINE NO: 1		def
+IDENTIFIER			93		LINE NO: 1		main
+SYM_B1       		38		LINE NO: 1		(
+SYM_B2       		39		LINE NO: 1		)
+OP_FUNC      		41		LINE NO: 1		=>
+KEYWD_INT    		70		LINE NO: 1		int
+SYM_P1       		31		LINE NO: 1		{
+IDENTIFIER			93		LINE NO: 2		print
+SYM_B1       		38		LINE NO: 2		(
+[STR_LIT]			91		LINE NO: 2		"Hello World"
+SYM_B2       		39		LINE NO: 2		)
+SYM_SEMICOLON		33		LINE NO: 2		;
+KEYWD_RETURN 		50		LINE NO: 3		return
+[INT_LIT]			88		LINE NO: 3		0
+SYM_SEMICOLON		33		LINE NO: 3		;
+SYM_P2       		32		LINE NO: 4		}

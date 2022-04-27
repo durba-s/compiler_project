@@ -15,6 +15,7 @@ const set<string> keys = {
         "if",
         "elif",
         "for",
+        "else",
         "in",
         "while",
         "do",
