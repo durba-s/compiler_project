@@ -1,747 +1,747 @@
 {
-    "0": {
-      "LHS ": "START ",
-      "RHS": [
-        "PROGRAM"
-      ]
-    },
-    "1": {
-      "LHS ": "PROGRAM ",
-      "RHS": [
-        "DECL",
-        "PROGRAM"
-      ]
-    },
-    "2": {
-      "LHS ": "PROGRAM ",
-      "RHS": [
-        "FUNCTION",
-        "PROGRAM"
-      ]
-    },
-    "3": {
-      "LHS ": "PROGRAM ",
-      "RHS": [
-        "''"
-      ]
-    },
-    "4": {
-      "LHS ": "STMTS ",
-      "RHS": [
-        "STMT",
-        "STMTS"
-      ]
-    },
-    "5": {
-      "LHS ": "STMTS ",
-      "RHS": [
-        "STMT"
-      ]
-    },
-    "6": {
-      "LHS ": "CODE_BLOCK ",
-      "RHS": [
-        "STMT"
-      ]
-    },
-    "7": {
-      "LHS ": "CODE_BLOCK ",
-      "RHS": [
-        "SYM_P1",
-        "STMTS",
-        "SYM_P2"
-      ]
-    },
-    "8": {
-      "LHS ": "STMT ",
-      "RHS": [
-        "DECL"
-      ]
-    },
-    "9": {
-      "LHS ": "STMT ",
-      "RHS": [
-        "ASSIGNMENT"
-      ]
-    },
-    "10": {
-      "LHS ": "STMT ",
-      "RHS": [
-        "CONDITIONAL"
-      ]
-    },
-    "11": {
-      "LHS ": "STMT ",
-      "RHS": [
-        "FOR"
-      ]
-    },
-    "12": {
-      "LHS ": "STMT ",
-      "RHS": [
-        "WHILE"
-      ]
-    },
-    "13": {
-      "LHS ": "STMT ",
-      "RHS": [
-        "DOWHILE"
-      ]
-    },
-    "14": {
-      "LHS ": "STMT ",
-      "RHS": [
-        "JUMP"
-      ]
-    },
-    "15": {
-      "LHS ": "STMT ",
-      "RHS": [
-        "SELECT"
-      ]
-    },
-    "16": {
-      "LHS ": "STMT ",
-      "RHS": [
-        "EXPR",
-        "SYM_SEMICOLON"
-      ]
-    },
-    "17": {
-      "LHS ": "DECL ",
-      "RHS": [
-        "TYPE",
-        "IDENTIFIER",
-        "SYM_SEMICOLON"
-      ]
-    },
-    "18": {
-      "LHS ": "ASSIGNMENT ",
-      "RHS": [
-        "IDENTIFIER",
-        "OP_ASSGN",
-        "EXPR",
-        "SYM_SEMICOLON"
-      ]
-    },
-    "19": {
-      "LHS ": "ASSIGNMENT ",
-      "RHS": [
-        "IDENTIFIER",
-        "SYM_SB1",
-        "DIM",
-        "SYM_SB2",
-        "OP_ASSGN",
-        "EXPR",
-        "SYM_SEMICOLON"
-      ]
-    },
-    "20": {
-      "LHS ": "ASSIGNMENT ",
-      "RHS": [
-        "IDENTIFIER",
-        "SHORT_OP",
-        "EXPR",
-        "SYM_SEMICOLON"
-      ]
-    },
-    "21": {
-      "LHS ": "ASSIGNMENT ",
-      "RHS": [
-        "IDENTIFIER",
-        "SYM_SB1",
-        "DIM",
-        "SYM_SB2",
-        "SHORT_OP",
-        "EXPR",
-        "SYM_SEMICOLON"
-      ]
-    },
-    "22": {
-      "LHS ": "CONDITIONAL ",
-      "RHS": [
-        "KEYWD_IF",
-        "SYM_B1",
-        "EXPR",
-        "SYM_B2",
-        "CODE_BLOCK",
-        "ELIF"
-      ]
-    },
-    "23": {
-      "LHS ": "CONDITIONAL ",
-      "RHS": [
-        "KEYWD_IF",
-        "SYM_B1",
-        "EXPR",
-        "SYM_B2",
-        "CODE_BLOCK",
-        "ELIF",
-        "KEYWD_ELSE",
-        "CODE_BLOCK"
-      ]
-    },
-    "24": {
-      "LHS ": "ELIF ",
-      "RHS": [
-        "KEYWD_ELIF",
-        "SYM_B1",
-        "EXPR",
-        "SYM_B2",
-        "CODE_BLOCK",
-        "ELIF"
-      ]
-    },
-    "25": {
-      "LHS ": "FOR ",
-      "RHS": [
-        "KEYWD_FOR",
-        "IDENTIFIER",
-        "KEYWD_IN",
-        "SYM_B1",
-        "EXPR",
-        "OP_COMMA",
-        "EXPR",
-        "SYM_B2",
-        "CODE_BLOCK"
-      ]
-    },
-    "26": {
-      "LHS ": "WHILE ",
-      "RHS": [
-        "KEYWD_WHILE",
-        "SYM_B1",
-        "EXPR",
-        "SYM_B2",
-        "CODE_BLOCK"
-      ]
-    },
-    "27": {
-      "LHS ": "DOWHILE ",
-      "RHS": [
-        "KEYWD_DO",
-        "CODE_BLOCK",
-        "KEYWD_WHILE",
-        "SYM_B1",
-        "EXPR",
-        "SYM_B2",
-        "SYM_SEMICOLON"
-      ]
-    },
-    "28": {
-      "LHS ": "JUMP ",
-      "RHS": [
-        "KEYWD_RETURN",
-        "EXPR",
-        "SYM_SEMICOLON"
-      ]
-    },
-    "29": {
-      "LHS ": "JUMP ",
-      "RHS": [
-        "KEYWD_BREAK",
-        "SYM_SEMICOLON"
-      ]
-    },
-    "30": {
-      "LHS ": "JUMP ",
-      "RHS": [
-        "KEYWD_CONTINUE",
-        "SYM_SEMICOLON"
-      ]
-    },
-    "31": {
-      "LHS ": "SELECT ",
-      "RHS": [
-        "KEYWD_SELECT",
-        "SYM_B1",
-        "EXPR",
-        "SYM_B2",
-        "SYM_P1",
-        "CASE_LIST",
-        "SYM_P2"
-      ]
-    },
-    "32": {
-      "LHS ": "CASE_LIST ",
-      "RHS": [
-        "KEYWD_CASE",
-        "EXPR",
-        "OP_TERN1",
-        "STMTS",
-        "CASE_LIST"
-      ]
-    },
-    "33": {
-      "LHS ": "CASE_LIST ",
-      "RHS": [
-        "KEYWD_DEFAULT",
-        "OP_TERN1",
-        "STMTS"
-      ]
-    },
-    "34": {
-      "LHS ": "CASE_LIST ",
-      "RHS": [
-        "''"
-      ]
-    },
-    "35": {
-      "LHS ": "FUNCTION ",
-      "RHS": [
-        "KEYWD_DEF",
-        "IDENTIFIER",
-        "SYM_B1",
-        "ARG_LIST",
-        "SYM_B2",
-        "OP_FUNC",
-        "TYPE",
-        "SYM_P1",
-        "STMTS",
-        "SYM_P2"
-      ]
-    },
-    "36": {
-      "LHS ": "ARG_LIST ",
-      "RHS": [
-        "TYPE",
-        "IDENTIFIER",
-        "OP_COMMA",
-        "ARG_LIST"
-      ]
-    },
-    "37": {
-      "LHS ": "ARG_LIST ",
-      "RHS": [
-        "TYPE",
-        "IDENTIFIER"
-      ]
-    },
-    "38": {
-      "LHS ": "ARG_LIST ",
-      "RHS": [
-        "''"
-      ]
-    },
-    "39": {
-      "LHS ": "FUNCTION_CALL ",
-      "RHS": [
-        "IDENTIFIER",
-        "SYM_B1",
-        "PARAM_LIST",
-        "SYM_B2"
-      ]
-    },
-    "40": {
-      "LHS ": "PARAM_LIST ",
-      "RHS": [
-        "PARAMS"
-      ]
-    },
-    "41": {
-      "LHS ": "PARAM_LIST ",
-      "RHS": [
-        "''"
-      ]
-    },
-    "42": {
-      "LHS ": "PARAMS ",
-      "RHS": [
-        "EXPR"
-      ]
-    },
-    "43": {
-      "LHS ": "PARAMS ",
-      "RHS": [
-        "EXPR",
-        "OP_COMMA",
-        "EXPR"
-      ]
-    },
-    "44": {
-      "LHS ": "TYPE ",
-      "RHS": [
-        "D_TYPE"
-      ]
-    },
-    "45": {
-      "LHS ": "TYPE ",
-      "RHS": [
-        "D_TYPE",
-        "SYM_SB1",
-        "DIM",
-        "SYM_SB2"
-      ]
-    },
-    "46": {
-      "LHS ": "DIM ",
-      "RHS": [
-        "EXPR",
-        "OP_COMMA",
-        "DIM"
-      ]
-    },
-    "47": {
-      "LHS ": "DIM ",
-      "RHS": [
-        "EXPR"
-      ]
-    },
-    "48": {
-      "LHS ": "DIM ",
-      "RHS": [
-        "''"
-      ]
-    },
-    "49": {
-      "LHS ": "D_TYPE ",
-      "RHS": [
-        "KEYWD_INT"
-      ]
-    },
-    "50": {
-      "LHS ": "D_TYPE ",
-      "RHS": [
-        "KEYWD_FLOAT"
-      ]
-    },
-    "51": {
-      "LHS ": "D_TYPE ",
-      "RHS": [
-        "KEYWD_CHAR"
-      ]
-    },
-    "52": {
-      "LHS ": "D_TYPE ",
-      "RHS": [
-        "KEYWD_BOOL"
-      ]
-    },
-    "53": {
-      "LHS ": "D_TYPE ",
-      "RHS": [
-        "KEYWD_VOID"
-      ]
-    },
-    "54": {
-      "LHS ": "D_TYPE ",
-      "RHS": [
-        "KEYWD_STRING"
-      ]
-    },
-    "55": {
-      "LHS ": "EXPR ",
-      "RHS": [
-        "SYM_B1",
-        "EXPR",
-        "BIN_OP",
-        "EXPR",
-        "SYM_B2"
-      ]
-    },
-    "56": {
-      "LHS ": "EXPR ",
-      "RHS": [
-        "PREFIX",
-        "EXPR"
-      ]
-    },
-    "57": {
-      "LHS ": "EXPR ",
-      "RHS": [
-        "FUNCTION_CALL"
-      ]
-    },
-    "58": {
-      "LHS ": "EXPR ",
-      "RHS": [
-        "IDENTIFIER"
-      ]
-    },
-    "59": {
-      "LHS ": "EXPR ",
-      "RHS": [
-        "LITERAL"
-      ]
-    },
-    "60": {
-      "LHS ": "EXPR ",
-      "RHS": [
-        "SYM_P1",
-        "LIST",
-        "SYM_P2"
-      ]
-    },
-    "61": {
-      "LHS ": "LIST ",
-      "RHS": [
-        "EXPR",
-        "OP_COMMA",
-        "LIST"
-      ]
-    },
-    "62": {
-      "LHS ": "LIST ",
-      "RHS": [
-        "EXPR"
-      ]
-    },
-    "63": {
-      "LHS ": "LITERAL ",
-      "RHS": [
-        "INT_LIT"
-      ]
-    },
-    "64": {
-      "LHS ": "LITERAL ",
-      "RHS": [
-        "FLOAT_LITERAL"
-      ]
-    },
-    "65": {
-      "LHS ": "LITERAL ",
-      "RHS": [
-        "CHAR_LIT"
-      ]
-    },
-    "66": {
-      "LHS ": "LITERAL ",
-      "RHS": [
-        "BOOL_LIT"
-      ]
-    },
-    "67": {
-      "LHS ": "LITERAL ",
-      "RHS": [
-        "STR_LIT"
-      ]
-    },
-    "68": {
-      "LHS ": "BOOL_LIT ",
-      "RHS": [
-        "KEYWD_TRUE"
-      ]
-    },
-    "69": {
-      "LHS ": "BOOL_LIT ",
-      "RHS": [
-        "KEYWD_FALSE"
-      ]
-    },
-    "70": {
-      "LHS ": "BIN_OP ",
-      "RHS": [
-        "ARTM_OP"
-      ]
-    },
-    "71": {
-      "LHS ": "BIN_OP ",
-      "RHS": [
-        "REL_OP"
-      ]
-    },
-    "72": {
-      "LHS ": "BIN_OP ",
-      "RHS": [
-        "LOGCL_OP"
-      ]
-    },
-    "73": {
-      "LHS ": "BIN_OP ",
-      "RHS": [
-        "BIT_OP"
-      ]
-    },
-    "74": {
-      "LHS ": "ARTM_OP ",
-      "RHS": [
-        "OP_AR_add"
-      ]
-    },
-    "75": {
-      "LHS ": "ARTM_OP ",
-      "RHS": [
-        "OP_AR_sub"
-      ]
-    },
-    "76": {
-      "LHS ": "ARTM_OP ",
-      "RHS": [
-        "OP_AR_mul"
-      ]
-    },
-    "77": {
-      "LHS ": "ARTM_OP ",
-      "RHS": [
-        "OP_AR_div"
-      ]
-    },
-    "78": {
-      "LHS ": "ARTM_OP ",
-      "RHS": [
-        "OP_AR_mod"
-      ]
-    },
-    "79": {
-      "LHS ": "REL_OP ",
-      "RHS": [
-        "OP_REL_gt"
-      ]
-    },
-    "80": {
-      "LHS ": "REL_OP ",
-      "RHS": [
-        "OP_REL_ge"
-      ]
-    },
-    "81": {
-      "LHS ": "REL_OP ",
-      "RHS": [
-        "OP_REL_lt"
-      ]
-    },
-    "82": {
-      "LHS ": "REL_OP ",
-      "RHS": [
-        "OP_REL_le"
-      ]
-    },
-    "83": {
-      "LHS ": "REL_OP ",
-      "RHS": [
-        "OP_REL_eq"
-      ]
-    },
-    "84": {
-      "LHS ": "REL_OP ",
-      "RHS": [
-        "OP_REL_neq"
-      ]
-    },
-    "85": {
-      "LHS ": "LOGCL_OP ",
-      "RHS": [
-        "OP_LOG_and"
-      ]
-    },
-    "86": {
-      "LHS ": "LOGCL_OP ",
-      "RHS": [
-        "OP_LOG_or"
-      ]
-    },
-    "87": {
-      "LHS ": "LOGCL_OP ",
-      "RHS": [
-        "OP_LOG_not"
-      ]
-    },
-    "88": {
-      "LHS ": "BIT_OP ",
-      "RHS": [
-        "OP_BIT_and"
-      ]
-    },
-    "89": {
-      "LHS ": "BIT_OP ",
-      "RHS": [
-        "OP_BIT_or"
-      ]
-    },
-    "90": {
-      "LHS ": "BIT_OP ",
-      "RHS": [
-        "OP_BIT_ls"
-      ]
-    },
-    "91": {
-      "LHS ": "BIT_OP ",
-      "RHS": [
-        "OP_BIT_rs"
-      ]
-    },
-    "92": {
-      "LHS ": "BIT_OP ",
-      "RHS": [
-        "OP_BIT_xor"
-      ]
-    },
-    "93": {
-      "LHS ": "SHORT_OP ",
-      "RHS": [
-        "OP_ASSGN1"
-      ]
-    },
-    "94": {
-      "LHS ": "SHORT_OP ",
-      "RHS": [
-        "OP_ASSGN2"
-      ]
-    },
-    "95": {
-      "LHS ": "SHORT_OP ",
-      "RHS": [
-        "OP_ASSGN3"
-      ]
-    },
-    "96": {
-      "LHS ": "SHORT_OP ",
-      "RHS": [
-        "OP_ASSGN4"
-      ]
-    },
-    "97": {
-      "LHS ": "SHORT_OP ",
-      "RHS": [
-        "OP_ASSGN5"
-      ]
-    },
-    "98": {
-      "LHS ": "SHORT_OP ",
-      "RHS": [
-        "OP_ASSGN6"
-      ]
-    },
-    "99": {
-      "LHS ": "SHORT_OP ",
-      "RHS": [
-        "OP_ASSGN7"
-      ]
-    },
-    "100": {
-      "LHS ": "SHORT_OP ",
-      "RHS": [
-        "OP_ASSGN8"
-      ]
-    },
-    "101": {
-      "LHS ": "PREFIX ",
-      "RHS": [
-        "OP_INCR"
-      ]
-    },
-    "102": {
-      "LHS ": "PREFIX ",
-      "RHS": [
-        "OP_DECR"
-      ]
-    },
-    "103": {
-      "LHS ": "PREFIX ",
-      "RHS": [
-        "OP_BIT4"
-      ]
-    },
-    "104": {
-      "LHS ": "PREFIX ",
-      "RHS": [
-        "OP_AR_add"
-      ]
-    },
-    "105": {
-      "LHS ": "PREFIX",
-      "RHS": [
-        "OP_AR_sub"
-      ]
-    }
+  "0": {
+    "LHS": "START",
+    "RHS": [
+      "PROGRAM"
+    ]
+  },
+  "1": {
+    "LHS": "PROGRAM",
+    "RHS": [
+      "DECL",
+      "PROGRAM"
+    ]
+  },
+  "2": {
+    "LHS": "PROGRAM",
+    "RHS": [
+      "FUNCTION",
+      "PROGRAM"
+    ]
+  },
+  "3": {
+    "LHS": "PROGRAM",
+    "RHS": [
+      "''"
+    ]
+  },
+  "4": {
+    "LHS": "STMTS",
+    "RHS": [
+      "STMT",
+      "STMTS"
+    ]
+  },
+  "5": {
+    "LHS": "STMTS",
+    "RHS": [
+      "STMT"
+    ]
+  },
+  "6": {
+    "LHS": "CODE_BLOCK",
+    "RHS": [
+      "STMT"
+    ]
+  },
+  "7": {
+    "LHS": "CODE_BLOCK",
+    "RHS": [
+      "SYM_P1",
+      "STMTS",
+      "SYM_P2"
+    ]
+  },
+  "8": {
+    "LHS": "STMT",
+    "RHS": [
+      "DECL"
+    ]
+  },
+  "9": {
+    "LHS": "STMT",
+    "RHS": [
+      "ASSIGNMENT"
+    ]
+  },
+  "10": {
+    "LHS": "STMT",
+    "RHS": [
+      "CONDITIONAL"
+    ]
+  },
+  "11": {
+    "LHS": "STMT",
+    "RHS": [
+      "FOR"
+    ]
+  },
+  "12": {
+    "LHS": "STMT",
+    "RHS": [
+      "WHILE"
+    ]
+  },
+  "13": {
+    "LHS": "STMT",
+    "RHS": [
+      "DOWHILE"
+    ]
+  },
+  "14": {
+    "LHS": "STMT",
+    "RHS": [
+      "JUMP"
+    ]
+  },
+  "15": {
+    "LHS": "STMT",
+    "RHS": [
+      "SELECT"
+    ]
+  },
+  "16": {
+    "LHS": "STMT",
+    "RHS": [
+      "EXPR",
+      "SYM_SEMICOLON"
+    ]
+  },
+  "17": {
+    "LHS": "DECL",
+    "RHS": [
+      "TYPE",
+      "IDENTIFIER",
+      "SYM_SEMICOLON"
+    ]
+  },
+  "18": {
+    "LHS": "ASSIGNMENT",
+    "RHS": [
+      "IDENTIFIER",
+      "OP_ASSGN",
+      "EXPR",
+      "SYM_SEMICOLON"
+    ]
+  },
+  "19": {
+    "LHS": "ASSIGNMENT",
+    "RHS": [
+      "IDENTIFIER",
+      "SYM_SB1",
+      "DIM",
+      "SYM_SB2",
+      "OP_ASSGN",
+      "EXPR",
+      "SYM_SEMICOLON"
+    ]
+  },
+  "20": {
+    "LHS": "ASSIGNMENT",
+    "RHS": [
+      "IDENTIFIER",
+      "SHORT_OP",
+      "EXPR",
+      "SYM_SEMICOLON"
+    ]
+  },
+  "21": {
+    "LHS": "ASSIGNMENT",
+    "RHS": [
+      "IDENTIFIER",
+      "SYM_SB1",
+      "DIM",
+      "SYM_SB2",
+      "SHORT_OP",
+      "EXPR",
+      "SYM_SEMICOLON"
+    ]
+  },
+  "22": {
+    "LHS": "CONDITIONAL",
+    "RHS": [
+      "KEYWD_IF",
+      "SYM_B1",
+      "EXPR",
+      "SYM_B2",
+      "CODE_BLOCK",
+      "ELIF"
+    ]
+  },
+  "23": {
+    "LHS": "CONDITIONAL",
+    "RHS": [
+      "KEYWD_IF",
+      "SYM_B1",
+      "EXPR",
+      "SYM_B2",
+      "CODE_BLOCK",
+      "ELIF",
+      "KEYWD_ELSE",
+      "CODE_BLOCK"
+    ]
+  },
+  "24": {
+    "LHS": "ELIF",
+    "RHS": [
+      "KEYWD_ELIF",
+      "SYM_B1",
+      "EXPR",
+      "SYM_B2",
+      "CODE_BLOCK",
+      "ELIF"
+    ]
+  },
+  "25": {
+    "LHS": "FOR",
+    "RHS": [
+      "KEYWD_FOR",
+      "IDENTIFIER",
+      "KEYWD_IN",
+      "SYM_B1",
+      "EXPR",
+      "OP_COMMA",
+      "EXPR",
+      "SYM_B2",
+      "CODE_BLOCK"
+    ]
+  },
+  "26": {
+    "LHS": "WHILE",
+    "RHS": [
+      "KEYWD_WHILE",
+      "SYM_B1",
+      "EXPR",
+      "SYM_B2",
+      "CODE_BLOCK"
+    ]
+  },
+  "27": {
+    "LHS": "DOWHILE",
+    "RHS": [
+      "KEYWD_DO",
+      "CODE_BLOCK",
+      "KEYWD_WHILE",
+      "SYM_B1",
+      "EXPR",
+      "SYM_B2",
+      "SYM_SEMICOLON"
+    ]
+  },
+  "28": {
+    "LHS": "JUMP",
+    "RHS": [
+      "KEYWD_RETURN",
+      "EXPR",
+      "SYM_SEMICOLON"
+    ]
+  },
+  "29": {
+    "LHS": "JUMP",
+    "RHS": [
+      "KEYWD_BREAK",
+      "SYM_SEMICOLON"
+    ]
+  },
+  "30": {
+    "LHS": "JUMP",
+    "RHS": [
+      "KEYWD_CONTINUE",
+      "SYM_SEMICOLON"
+    ]
+  },
+  "31": {
+    "LHS": "SELECT",
+    "RHS": [
+      "KEYWD_SELECT",
+      "SYM_B1",
+      "EXPR",
+      "SYM_B2",
+      "SYM_P1",
+      "CASE_LIST",
+      "SYM_P2"
+    ]
+  },
+  "32": {
+    "LHS": "CASE_LIST",
+    "RHS": [
+      "KEYWD_CASE",
+      "EXPR",
+      "OP_TERN1",
+      "STMTS",
+      "CASE_LIST"
+    ]
+  },
+  "33": {
+    "LHS": "CASE_LIST",
+    "RHS": [
+      "KEYWD_DEFAULT",
+      "OP_TERN1",
+      "STMTS"
+    ]
+  },
+  "34": {
+    "LHS": "CASE_LIST",
+    "RHS": [
+      "''"
+    ]
+  },
+  "35": {
+    "LHS": "FUNCTION",
+    "RHS": [
+      "KEYWD_DEF",
+      "IDENTIFIER",
+      "SYM_B1",
+      "ARG_LIST",
+      "SYM_B2",
+      "OP_FUNC",
+      "TYPE",
+      "SYM_P1",
+      "STMTS",
+      "SYM_P2"
+    ]
+  },
+  "36": {
+    "LHS": "ARG_LIST",
+    "RHS": [
+      "TYPE",
+      "IDENTIFIER",
+      "OP_COMMA",
+      "ARG_LIST"
+    ]
+  },
+  "37": {
+    "LHS": "ARG_LIST",
+    "RHS": [
+      "TYPE",
+      "IDENTIFIER"
+    ]
+  },
+  "38": {
+    "LHS": "ARG_LIST",
+    "RHS": [
+      "''"
+    ]
+  },
+  "39": {
+    "LHS": "FUNCTION_CALL",
+    "RHS": [
+      "IDENTIFIER",
+      "SYM_B1",
+      "PARAM_LIST",
+      "SYM_B2"
+    ]
+  },
+  "40": {
+    "LHS": "PARAM_LIST",
+    "RHS": [
+      "PARAMS"
+    ]
+  },
+  "41": {
+    "LHS": "PARAM_LIST",
+    "RHS": [
+      "''"
+    ]
+  },
+  "42": {
+    "LHS": "PARAMS",
+    "RHS": [
+      "EXPR"
+    ]
+  },
+  "43": {
+    "LHS": "PARAMS",
+    "RHS": [
+      "EXPR",
+      "OP_COMMA",
+      "EXPR"
+    ]
+  },
+  "44": {
+    "LHS": "TYPE",
+    "RHS": [
+      "D_TYPE"
+    ]
+  },
+  "45": {
+    "LHS": "TYPE",
+    "RHS": [
+      "D_TYPE",
+      "SYM_SB1",
+      "DIM",
+      "SYM_SB2"
+    ]
+  },
+  "46": {
+    "LHS": "DIM",
+    "RHS": [
+      "EXPR",
+      "OP_COMMA",
+      "DIM"
+    ]
+  },
+  "47": {
+    "LHS": "DIM",
+    "RHS": [
+      "EXPR"
+    ]
+  },
+  "48": {
+    "LHS": "DIM",
+    "RHS": [
+      "''"
+    ]
+  },
+  "49": {
+    "LHS": "D_TYPE",
+    "RHS": [
+      "KEYWD_INT"
+    ]
+  },
+  "50": {
+    "LHS": "D_TYPE",
+    "RHS": [
+      "KEYWD_FLOAT"
+    ]
+  },
+  "51": {
+    "LHS": "D_TYPE",
+    "RHS": [
+      "KEYWD_CHAR"
+    ]
+  },
+  "52": {
+    "LHS": "D_TYPE",
+    "RHS": [
+      "KEYWD_BOOL"
+    ]
+  },
+  "53": {
+    "LHS": "D_TYPE",
+    "RHS": [
+      "KEYWD_VOID"
+    ]
+  },
+  "54": {
+    "LHS": "D_TYPE",
+    "RHS": [
+      "KEYWD_STRING"
+    ]
+  },
+  "55": {
+    "LHS": "EXPR",
+    "RHS": [
+      "SYM_B1",
+      "EXPR",
+      "BIN_OP",
+      "EXPR",
+      "SYM_B2"
+    ]
+  },
+  "56": {
+    "LHS": "EXPR",
+    "RHS": [
+      "PREFIX",
+      "EXPR"
+    ]
+  },
+  "57": {
+    "LHS": "EXPR",
+    "RHS": [
+      "FUNCTION_CALL"
+    ]
+  },
+  "58": {
+    "LHS": "EXPR",
+    "RHS": [
+      "IDENTIFIER"
+    ]
+  },
+  "59": {
+    "LHS": "EXPR",
+    "RHS": [
+      "LITERAL"
+    ]
+  },
+  "60": {
+    "LHS": "EXPR",
+    "RHS": [
+      "SYM_P1",
+      "LIST",
+      "SYM_P2"
+    ]
+  },
+  "61": {
+    "LHS": "LIST",
+    "RHS": [
+      "EXPR",
+      "OP_COMMA",
+      "LIST"
+    ]
+  },
+  "62": {
+    "LHS": "LIST",
+    "RHS": [
+      "EXPR"
+    ]
+  },
+  "63": {
+    "LHS": "LITERAL",
+    "RHS": [
+      "INT_LIT"
+    ]
+  },
+  "64": {
+    "LHS": "LITERAL",
+    "RHS": [
+      "FLOAT_LITERAL"
+    ]
+  },
+  "65": {
+    "LHS": "LITERAL",
+    "RHS": [
+      "CHAR_LIT"
+    ]
+  },
+  "66": {
+    "LHS": "LITERAL",
+    "RHS": [
+      "BOOL_LIT"
+    ]
+  },
+  "67": {
+    "LHS": "LITERAL",
+    "RHS": [
+      "STR_LIT"
+    ]
+  },
+  "68": {
+    "LHS": "BOOL_LIT",
+    "RHS": [
+      "KEYWD_TRUE"
+    ]
+  },
+  "69": {
+    "LHS": "BOOL_LIT",
+    "RHS": [
+      "KEYWD_FALSE"
+    ]
+  },
+  "70": {
+    "LHS": "BIN_OP",
+    "RHS": [
+      "ARTM_OP"
+    ]
+  },
+  "71": {
+    "LHS": "BIN_OP",
+    "RHS": [
+      "REL_OP"
+    ]
+  },
+  "72": {
+    "LHS": "BIN_OP",
+    "RHS": [
+      "LOGCL_OP"
+    ]
+  },
+  "73": {
+    "LHS": "BIN_OP",
+    "RHS": [
+      "BIT_OP"
+    ]
+  },
+  "74": {
+    "LHS": "ARTM_OP",
+    "RHS": [
+      "OP_AR_add"
+    ]
+  },
+  "75": {
+    "LHS": "ARTM_OP",
+    "RHS": [
+      "OP_AR_sub"
+    ]
+  },
+  "76": {
+    "LHS": "ARTM_OP",
+    "RHS": [
+      "OP_AR_mul"
+    ]
+  },
+  "77": {
+    "LHS": "ARTM_OP",
+    "RHS": [
+      "OP_AR_div"
+    ]
+  },
+  "78": {
+    "LHS": "ARTM_OP",
+    "RHS": [
+      "OP_AR_mod"
+    ]
+  },
+  "79": {
+    "LHS": "REL_OP",
+    "RHS": [
+      "OP_REL_gt"
+    ]
+  },
+  "80": {
+    "LHS": "REL_OP",
+    "RHS": [
+      "OP_REL_ge"
+    ]
+  },
+  "81": {
+    "LHS": "REL_OP",
+    "RHS": [
+      "OP_REL_lt"
+    ]
+  },
+  "82": {
+    "LHS": "REL_OP",
+    "RHS": [
+      "OP_REL_le"
+    ]
+  },
+  "83": {
+    "LHS": "REL_OP",
+    "RHS": [
+      "OP_REL_eq"
+    ]
+  },
+  "84": {
+    "LHS": "REL_OP",
+    "RHS": [
+      "OP_REL_neq"
+    ]
+  },
+  "85": {
+    "LHS": "LOGCL_OP",
+    "RHS": [
+      "OP_LOG_and"
+    ]
+  },
+  "86": {
+    "LHS": "LOGCL_OP",
+    "RHS": [
+      "OP_LOG_or"
+    ]
+  },
+  "87": {
+    "LHS": "LOGCL_OP",
+    "RHS": [
+      "OP_LOG_not"
+    ]
+  },
+  "88": {
+    "LHS": "BIT_OP",
+    "RHS": [
+      "OP_BIT_and"
+    ]
+  },
+  "89": {
+    "LHS": "BIT_OP",
+    "RHS": [
+      "OP_BIT_or"
+    ]
+  },
+  "90": {
+    "LHS": "BIT_OP",
+    "RHS": [
+      "OP_BIT_ls"
+    ]
+  },
+  "91": {
+    "LHS": "BIT_OP",
+    "RHS": [
+      "OP_BIT_rs"
+    ]
+  },
+  "92": {
+    "LHS": "BIT_OP",
+    "RHS": [
+      "OP_BIT_xor"
+    ]
+  },
+  "93": {
+    "LHS": "SHORT_OP",
+    "RHS": [
+      "OP_ASSGN1"
+    ]
+  },
+  "94": {
+    "LHS": "SHORT_OP",
+    "RHS": [
+      "OP_ASSGN2"
+    ]
+  },
+  "95": {
+    "LHS": "SHORT_OP",
+    "RHS": [
+      "OP_ASSGN3"
+    ]
+  },
+  "96": {
+    "LHS": "SHORT_OP",
+    "RHS": [
+      "OP_ASSGN4"
+    ]
+  },
+  "97": {
+    "LHS": "SHORT_OP",
+    "RHS": [
+      "OP_ASSGN5"
+    ]
+  },
+  "98": {
+    "LHS": "SHORT_OP",
+    "RHS": [
+      "OP_ASSGN6"
+    ]
+  },
+  "99": {
+    "LHS": "SHORT_OP",
+    "RHS": [
+      "OP_ASSGN7"
+    ]
+  },
+  "100": {
+    "LHS": "SHORT_OP",
+    "RHS": [
+      "OP_ASSGN8"
+    ]
+  },
+  "101": {
+    "LHS": "PREFIX",
+    "RHS": [
+      "OP_INCR"
+    ]
+  },
+  "102": {
+    "LHS": "PREFIX",
+    "RHS": [
+      "OP_DECR"
+    ]
+  },
+  "103": {
+    "LHS": "PREFIX",
+    "RHS": [
+      "OP_BIT4"
+    ]
+  },
+  "104": {
+    "LHS": "PREFIX",
+    "RHS": [
+      "OP_AR_add"
+    ]
+  },
+  "105": {
+    "LHS": "PREFIX",
+    "RHS": [
+      "OP_AR_sub"
+    ]
   }
+}

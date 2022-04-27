@@ -1,5 +1,4 @@
 CC = g++
-
 SRC=src
 LIB=lib
 
@@ -17,7 +16,7 @@ all: $(TARGETS)
 	$(CC) -o ./qube $+ $(FLAGS)
 
 $(LIB)/%.o: $(SRC)/%.cpp
-	$(CC) -c $^ -o $@ $(FLAGS)
+	$(CC) -c $^ -o $@ $(FLAGS) $(LIBS)
 
 clean:
 	rm -rf $(LIB)
