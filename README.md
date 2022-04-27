@@ -8,7 +8,7 @@ make clean && make
 #the output of syntax analysis will be stored in filename_out.txt (stores parse stack contents)
 #the intermediate code (3ac) will be stored in filename_tac.txt
 ```
-### Lexer Output:
+### Example test case:
 ###### Program:
 ```sh
 # sample program
