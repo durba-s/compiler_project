@@ -4,7 +4,23 @@
 int main(int argc, char *argv[]) {
     string fn = readFN(argc,argv);
     vector<pair<string,string> >  tl = displayFile(fn);
-    vector<string> rules = parser(tl,fn);
+    vector<string> rules = parser(tl,fn,1);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*Json::Value root;
     regex re("\"|\n|\\[|\\]");
     Json::FastWriter fastWriter;
@@ -17,8 +33,5 @@ int main(int argc, char *argv[]) {
     file.close();
     out.close();
     */
-
-    return 0;
-}
 
 
