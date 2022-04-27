@@ -4,15 +4,24 @@
 #include <stack>
 #include<vector>
 #include<regex>
+#include <string>
+#include <set>
 using namespace std;
-typedef struct{
-    string op1;
-    string op2;
-    string op;
-    string res;
-} quadruple;
+const set<string> relop = {
+        ">",
+        ">=",
+        "<",
+        "<=",
+        "==",
+        "!=",
+        "&&",
+        "||"
+};
+
+string getTemp();
+string getLabel();
 void printStack(ofstream& er);
 void handleShift(string inp, int state);
-void handleReduce(string rule);
+void handleReduce(string rule,ofstream& ic);
 string handleGoto(string nt,string state);
 vector<string> parser(vector<pair<string,string> > tok_list,string _fname);

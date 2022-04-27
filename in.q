@@ -1,8 +1,12 @@
-def main() => int{
+def main() => void{
     int a;
     int b;
     int c;
     int d;
-    d = ((a * b) + c);
-    return 0;
+    if((a>5)) {
+        c=((b+d)*a);
+    }
+    else {
+        c=((b+d)-a);
+    }
 }

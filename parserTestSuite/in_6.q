@@ -4,7 +4,7 @@ def main() => int{
     int c;
     int d;
     int e;
-    d = ((((a * b) + c)/b)-a);
-    e = ((a>=d)+b);
+    d = (a>=b);
+    e = ((a==b)!=d);
     return 0;
 }

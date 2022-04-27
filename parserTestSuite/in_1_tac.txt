@@ -1,0 +1,14 @@
+t0 = a*b
+t1 = t0+c
+t2 = t1/b
+t3 = t2-a
+d=t3
+if a>=d goto l0
+t4 = 0
+goto l1
+l0:
+t4 = 1
+l1:
+t5 = t4+b
+e=t5
+

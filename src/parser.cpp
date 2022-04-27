@@ -1,6 +1,44 @@
 #include "parser.h"
 
-vector< pair<string,string> > parseStack;
+class symbol{
+    public:
+    string symbolName;
+    string val;
+    string temp="";
+    string code="";
+    int type;
+    symbol(string nm){
+        symbolName = nm;
+        type = 0; //for non-terminals
+    }
+    symbol(string nm,string v){
+        symbolName = nm;
+        val = v;
+        type = 1; //for terminals
+    }
+    void printCode(){
+        cout<<code<<endl;
+    }
+};
+
+int tempIdx = 0;
+int labelIdx = 0;
+
+string getTemp(){
+    string stri = to_string(tempIdx);
+    tempIdx++;
+    string tempVar = "t"+stri;
+    return tempVar;
+}
+
+string getLabel(){
+    string stri = to_string(labelIdx);
+    labelIdx++;
+    string tempVar = "l"+stri;
+    return tempVar;
+}
+
+vector< pair<string,symbol> > parseStack;
 regex re("\"|\n");
 Json::FastWriter fastWriter;
 
@@ -12,7 +50,7 @@ void printStack(ofstream& er){
     er<<"[STACK]: ";
     for(int i = 0;i < parseStack.size();i++){
         if(i>0){
-            er<<parseStack[i].second<<" ";
+            er<<parseStack[i].second.symbolName<<" ";
             er<<parseStack[i].first<<" ";
         }
         else{
@@ -21,11 +59,16 @@ void printStack(ofstream& er){
     }
     er<<endl;
 }
-void handleShift(string inp, string state){
-    parseStack.push_back(make_pair(state,inp));
+
+
+void handleShift(pair<string,string> inp, string state){
+    symbol newInp = symbol(inp.first,inp.second);
+    parseStack.push_back(make_pair(state,newInp));
     inpIdx++;
 }
-void handleReduce(string rule){
+
+
+void handleReduce(string rule,ofstream& ic){
     //cout<<"[REDUCE]"<<endl;
     Json::Value root;
     Json::Reader reader;
@@ -34,17 +77,111 @@ void handleReduce(string rule){
     Json::Value lhs = root[rule]["LHS"];
     int len = root[rule]["RHS"].size();
     file.close();
+
+
+    string nonTerminal = regex_replace(fastWriter.write(lhs),re,"");
+    symbol newInp = symbol(nonTerminal);
+
+    //generating intermediate code
+    int ruleNum =  stoi(rule);
+
+    if(ruleNum==66||ruleNum==67||ruleNum>=72||ruleNum==61||ruleNum==62||ruleNum==63||ruleNum==56){
+        newInp.temp = parseStack[parseStack.size()-1].second.val;
+    }
+
+    if(ruleNum==64||ruleNum==68||ruleNum==69||ruleNum==70||ruleNum==71||ruleNum==57){
+        newInp.temp = parseStack[parseStack.size()-1].second.temp;
+    }
+
+    if(ruleNum==53){
+        newInp.temp = getTemp();
+        newInp.code = parseStack[parseStack.size()-4].second.code + parseStack[parseStack.size()-2].second.code;
+        string op1 = parseStack[parseStack.size()-4].second.temp;
+        string op2 = parseStack[parseStack.size()-2].second.temp;
+        string op = parseStack[parseStack.size()-3].second.temp;
+        if(relop.find(op) == relop.end()){
+            string genCode = newInp.temp+" = "+op1+op+op2+"\n";
+            newInp.code = newInp.code + genCode;
+            //ic<<genCode<<endl;
+        }
+        else{
+            string l1 = getLabel();
+            string l2 = getLabel();
+            string genCode = "if "+op1+op+op2+" goto "+l1+"\n"+newInp.temp+" = 0\ngoto "+l2+"\n"+l1+":\n"+newInp.temp+" = 1\n"+l2+":\n";
+            //ic<<genCode<<endl;
+            newInp.code = newInp.code + genCode;
+        }
+    }
+
+    if(ruleNum==54){
+        newInp.temp = getTemp();
+        newInp.code = parseStack[parseStack.size()-1].second.code;
+        string op1 = parseStack[parseStack.size()-1].second.temp;
+        string op = parseStack[parseStack.size()-2].second.temp;
+        newInp.code = newInp.code + newInp.temp+"="+op+op1+"\n";
+        //ic<< newInp.temp+"="+op+op1<<endl;
+    }
+
+    if(ruleNum==9||ruleNum==10||ruleNum==16){
+        newInp.code = parseStack[parseStack.size()-1].second.code;
+    }
+
+    if(ruleNum==18){
+        newInp.code = parseStack[parseStack.size()-2].second.code;
+        string genCode = parseStack[parseStack.size()-4].second.val + parseStack[parseStack.size()-3].second.val + parseStack[parseStack.size()-2].second.temp+"\n";
+        newInp.code = newInp.code+genCode;
+        //ic<<genCode<<endl;
+    }
+
+    if(ruleNum==20){
+        newInp.code = parseStack[parseStack.size()-3].second.code;
+        string genCode = parseStack[parseStack.size()-4].second.val + parseStack[parseStack.size()-3].second.temp + parseStack[parseStack.size()-2].second.temp+"\n";
+        newInp.code = newInp.code+genCode;
+        //ic<<genCode<<endl;
+    }
+
+    if(ruleNum==33){
+        newInp.code = parseStack[parseStack.size()-2].second.code;
+        ic<<newInp.code<<endl;
+    }
+
+    if(ruleNum==5||ruleNum==6){
+        newInp.code = parseStack[parseStack.size()-1].second.code;
+    }
+
+    if(ruleNum==4){
+        newInp.code = parseStack[parseStack.size()-2].second.code+parseStack[parseStack.size()-1].second.code;
+    }
+
+    if(ruleNum==7){
+        newInp.code = parseStack[parseStack.size()-2].second.code;
+    }
+
+    if(ruleNum==22){
+        newInp.code = parseStack[parseStack.size()-5].second.code;
+        string op = parseStack[parseStack.size()-5].second.temp;
+        string sel = parseStack[parseStack.size()-1].second.code;
+        string si = parseStack[parseStack.size()-3].second.code;
+        string l1=getLabel();
+        string l2=getLabel();
+        string genCode = "if "+op+"= 0"+" goto "+l1+"\n"+si+"goto "+l2+"\n"+l1+":\n"+sel+l2+":\n";
+        newInp.code = newInp.code+genCode;
+
+    }
+
+
     for(int i = 0;i<len;i++){
         parseStack.pop_back();
     }
     string currState = parseStack[parseStack.size()-1].first;
-    string nonTerminal = regex_replace(fastWriter.write(lhs),re,"");
     string nextState = handleGoto(nonTerminal,currState);
     //cout<<nextState<<endl;
-    parseStack.push_back(make_pair(nextState,nonTerminal));
+    parseStack.push_back(make_pair(nextState,newInp));
     //cout<<"[done]"<<endl;
     return;
 }
+
+
 string handleGoto(string nt,string state){
     Json::Value root;
     Json::Reader reader;
@@ -55,6 +192,8 @@ string handleGoto(string nt,string state){
     file.close();
     return regex_replace(curr,re,"");
 }
+
+
 vector<string> parser(vector<pair<string,string> > tok_list,string _fname){
 
     vector<string> prodRules;
@@ -64,8 +203,12 @@ vector<string> parser(vector<pair<string,string> > tok_list,string _fname){
     ofstream out(out_file);
     ofstream& er(out);
 
+    string tac_file= regex_replace( _fname, r, "_tac.txt"); //creating the ic file.
+    ofstream tac(tac_file);
+    ofstream& icode(tac);
+
     tok_list.push_back(make_pair("$","$"));
-    parseStack.push_back(make_pair("0","")); //initialize stack
+    parseStack.push_back(make_pair("0",symbol(""))); //initialize stack
     //cout<<parseStack.top().first;
     int n = tok_list.size();
 
@@ -86,11 +229,11 @@ vector<string> parser(vector<pair<string,string> > tok_list,string _fname){
             out<<"[ACTION]: "<<action<<endl;
             if(type=='s'){
                 string num = action.substr(1,action.size());
-                handleShift(input,num);
+                handleShift(tok_list[inpIdx],num);
             }
             else if(type=='r'){
                 string num = action.substr(1,action.size());
-                handleReduce(num);
+                handleReduce(num,icode);
                 prodRules.push_back(num);
             }
             else if(type=='a'){
