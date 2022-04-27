@@ -1,12 +1,15 @@
 def main() => void{
+    #/this is a
+    multi line comment/#
     int a;
     int b;
+    # this is a single line comment
     int c;
-    int d;
     if((a>5)) {
-        c=((b+d)*a);
+        c=((b+a)*a);
     }
     else {
-        c=((b+d)-a);
+        c=((b+a)-a);
     }
+    #this is a single line comment
 }
