@@ -1,25 +1,25 @@
 #include "parser.h"
-/*
-handleShift()
-handleReduce()
-handleGoto()
-readParseTable()
-*/
+
 vector< pair<string,string> > parseStack;
 regex re("\"|\n");
 Json::FastWriter fastWriter;
+
 int inpIdx = 0;
-void printStack(){
+int err = 0;
+
+void printStack(ofstream& er){
+    er<<"------------------------------------------------------"<<endl;
+    er<<"[STACK]: ";
     for(int i = 0;i < parseStack.size();i++){
         if(i>0){
-            cout<<parseStack[i].second<<" ";
-            cout<<parseStack[i].first<<" ";
+            er<<parseStack[i].second<<" ";
+            er<<parseStack[i].first<<" ";
         }
         else{
-            cout<<parseStack[i].first<<" ";
+            er<<parseStack[i].first<<" ";
         }
     }
-    cout<<endl;
+    er<<endl;
 }
 void handleShift(string inp, string state){
     parseStack.push_back(make_pair(state,inp));
@@ -55,9 +55,16 @@ string handleGoto(string nt,string state){
     file.close();
     return regex_replace(curr,re,"");
 }
-void parser(vector<string> tok_list){
+vector<string> parser(vector<pair<string,string> > tok_list,string _fname){
 
-    tok_list.push_back("$");
+    vector<string> prodRules;
+
+    regex r("\\.q");
+    string out_file= regex_replace( _fname, r, "_out.txt"); //creating the output file.
+    ofstream out(out_file);
+    ofstream& er(out);
+
+    tok_list.push_back(make_pair("$","$"));
     parseStack.push_back(make_pair("0","")); //initialize stack
     //cout<<parseStack.top().first;
     int n = tok_list.size();
@@ -65,14 +72,18 @@ void parser(vector<string> tok_list){
     ifstream pt("./FINALGrammar/lalrTable.json");
     Json::Value root;
     pt >> root;
-    while(inpIdx < n){
-        string input = tok_list[inpIdx];
+    while(inpIdx < n && parseStack.size()>0){
+        string input = tok_list[inpIdx].first;
         string state = parseStack[parseStack.size()-1].first;
         Json::Value act = root[state][input];
+        printStack(er);
+        out<<"[STATE]: "<<state<<endl;
+        out<<"[INP_SYM]: "<<input<<endl;
+        out<<"[INP]: "<<tok_list[inpIdx].second<<endl;
         if(act){
-            printStack();
             string action = regex_replace(fastWriter.write(act),re,"");
             char type = action[0];
+            out<<"[ACTION]: "<<action<<endl;
             if(type=='s'){
                 string num = action.substr(1,action.size());
                 handleShift(input,num);
@@ -80,17 +91,30 @@ void parser(vector<string> tok_list){
             else if(type=='r'){
                 string num = action.substr(1,action.size());
                 handleReduce(num);
+                prodRules.push_back(num);
             }
             else if(type=='a'){
-                cout<<"parsing successfull..."<<endl;
+                if(err==0)
+                    out<<"valid program..."<<endl;
+                else
+                    out<<"there is error in the program..."<<endl;
                 break;
             }
         }
         else{
-            cout<<"parsing error...\nskipping current input symbol..."<<endl;
-            break;
+            //cout<<"parsing error...\nskipping current input symbol..."<<endl;
+            //inpIdx++;
+            //break;
+            out<<"[ACTION]: null"<<endl;
+            out<<"parsing error...\npopping stack symbol..."<<endl;
+            parseStack.pop_back();
+            err = 1;
+            //break;
         }
     }
+    out<<"parsing completed..."<<endl;
+    out.close();
+    return prodRules;
 }
 
 

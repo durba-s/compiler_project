@@ -6,4 +6,4 @@ string removeSpaces(string str);
 /**
  * Stores the output of the lexer in _fname_lex_out.txt.
  * */
-vector<string> displayFile(string _fname);
+vector<pair<string,string> >  displayFile(string _fname);

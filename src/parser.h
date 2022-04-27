@@ -11,7 +11,8 @@ typedef struct{
     string op;
     string res;
 } quadruple;
+void printStack(ofstream& er);
 void handleShift(string inp, int state);
 void handleReduce(string rule);
 string handleGoto(string nt,string state);
-void parser(vector<string> tok_list);
+vector<string> parser(vector<pair<string,string> > tok_list,string _fname);

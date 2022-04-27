@@ -1,0 +1,271 @@
+------------------------------------------------------
+[STACK]: 0 
+[STATE]: 0
+[INP_SYM]: KEYWD_DEF
+[ACTION]: s5
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 
+[STATE]: 5
+[INP_SYM]: IDENTIFIER
+[ACTION]: s16
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 
+[STATE]: 16
+[INP_SYM]: SYM_B1
+[ACTION]: s19
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 
+[STATE]: 19
+[INP_SYM]: SYM_B2
+[ACTION]: r36
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 
+[STATE]: 40
+[INP_SYM]: SYM_B2
+[ACTION]: s49
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 
+[STATE]: 49
+[INP_SYM]: OP_FUNC
+[ACTION]: s81
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 
+[STATE]: 81
+[INP_SYM]: KEYWD_VOID
+[ACTION]: s11
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 KEYWD_VOID 11 
+[STATE]: 11
+[INP_SYM]: SYM_P1
+[ACTION]: r51
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 D_TYPE 6 
+[STATE]: 6
+[INP_SYM]: SYM_P1
+[ACTION]: r42
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 
+[STATE]: 87
+[INP_SYM]: SYM_P1
+[ACTION]: s91
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 
+[STATE]: 91
+[INP_SYM]: KEYWD_INT
+[ACTION]: s7
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 KEYWD_INT 7 
+[STATE]: 7
+[INP_SYM]: IDENTIFIER
+[ACTION]: r47
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 D_TYPE 6 
+[STATE]: 6
+[INP_SYM]: IDENTIFIER
+[ACTION]: r42
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 TYPE 4 
+[STATE]: 4
+[INP_SYM]: IDENTIFIER
+[ACTION]: s15
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 TYPE 4 IDENTIFIER 15 
+[STATE]: 15
+[INP_SYM]: SYM_SEMICOLON
+[ACTION]: s18
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 TYPE 4 IDENTIFIER 15 SYM_SEMICOLON 18 
+[STATE]: 18
+[INP_SYM]: KEYWD_INT
+[ACTION]: r17
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 DECL 94 
+[STATE]: 94
+[INP_SYM]: KEYWD_INT
+[ACTION]: r8
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 
+[STATE]: 93
+[INP_SYM]: KEYWD_INT
+[ACTION]: s7
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 KEYWD_INT 7 
+[STATE]: 7
+[INP_SYM]: IDENTIFIER
+[ACTION]: r47
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 D_TYPE 6 
+[STATE]: 6
+[INP_SYM]: IDENTIFIER
+[ACTION]: r42
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 TYPE 4 
+[STATE]: 4
+[INP_SYM]: IDENTIFIER
+[ACTION]: s15
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 TYPE 4 IDENTIFIER 15 
+[STATE]: 15
+[INP_SYM]: SYM_SEMICOLON
+[ACTION]: s18
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 TYPE 4 IDENTIFIER 15 SYM_SEMICOLON 18 
+[STATE]: 18
+[INP_SYM]: IDENTIFIER
+[ACTION]: r17
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 DECL 94 
+[STATE]: 94
+[INP_SYM]: IDENTIFIER
+[ACTION]: r8
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 
+[STATE]: 93
+[INP_SYM]: IDENTIFIER
+[ACTION]: s103
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 
+[STATE]: 103
+[INP_SYM]: OP_ASSGN
+[ACTION]: s115
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 
+[STATE]: 115
+[INP_SYM]: INT_LIT
+[ACTION]: s33
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 INT_LIT 33 
+[STATE]: 33
+[INP_SYM]: OP_AR_add
+[ACTION]: r61
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 LITERAL 26 
+[STATE]: 26
+[INP_SYM]: OP_AR_add
+[ACTION]: r57
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 EXPR 136 
+[STATE]: 136
+[INP_SYM]: OP_AR_add
+[ACTION]: null
+parsing error...
+popping stack symbol...
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 
+[STATE]: 115
+[INP_SYM]: OP_AR_add
+[ACTION]: s31
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 OP_AR_add 31 
+[STATE]: 31
+[INP_SYM]: INT_LIT
+[ACTION]: r102
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 PREFIX 23 
+[STATE]: 23
+[INP_SYM]: INT_LIT
+[ACTION]: s33
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 PREFIX 23 INT_LIT 33 
+[STATE]: 33
+[INP_SYM]: OP_AR_sub
+[ACTION]: r61
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 PREFIX 23 LITERAL 26 
+[STATE]: 26
+[INP_SYM]: OP_AR_sub
+[ACTION]: r57
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 PREFIX 23 EXPR 45 
+[STATE]: 45
+[INP_SYM]: OP_AR_sub
+[ACTION]: r54
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 EXPR 136 
+[STATE]: 136
+[INP_SYM]: OP_AR_sub
+[ACTION]: null
+parsing error...
+popping stack symbol...
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 
+[STATE]: 115
+[INP_SYM]: OP_AR_sub
+[ACTION]: s32
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 OP_AR_sub 32 
+[STATE]: 32
+[INP_SYM]: IDENTIFIER
+[ACTION]: r103
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 PREFIX 23 
+[STATE]: 23
+[INP_SYM]: IDENTIFIER
+[ACTION]: s25
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 PREFIX 23 IDENTIFIER 25 
+[STATE]: 25
+[INP_SYM]: SYM_SEMICOLON
+[ACTION]: r56
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 PREFIX 23 EXPR 45 
+[STATE]: 45
+[INP_SYM]: SYM_SEMICOLON
+[ACTION]: r54
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 EXPR 136 
+[STATE]: 136
+[INP_SYM]: SYM_SEMICOLON
+[ACTION]: s147
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 IDENTIFIER 103 OP_ASSGN 115 EXPR 136 SYM_SEMICOLON 147 
+[STATE]: 147
+[INP_SYM]: SYM_P2
+[ACTION]: r18
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 ASSIGNMENT 95 
+[STATE]: 95
+[INP_SYM]: SYM_P2
+[ACTION]: r9
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 STMT 93 
+[STATE]: 93
+[INP_SYM]: SYM_P2
+[ACTION]: r5
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMT 93 STMTS 113 
+[STATE]: 113
+[INP_SYM]: SYM_P2
+[ACTION]: r4
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMT 93 STMTS 113 
+[STATE]: 113
+[INP_SYM]: SYM_P2
+[ACTION]: r4
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMTS 92 
+[STATE]: 92
+[INP_SYM]: SYM_P2
+[ACTION]: s112
+------------------------------------------------------
+[STACK]: 0 KEYWD_DEF 5 IDENTIFIER 16 SYM_B1 19 ARG_LIST 40 SYM_B2 49 OP_FUNC 81 TYPE 87 SYM_P1 91 STMTS 92 SYM_P2 112 
+[STATE]: 112
+[INP_SYM]: $
+[ACTION]: r33
+------------------------------------------------------
+[STACK]: 0 FUNCTION 3 
+[STATE]: 3
+[INP_SYM]: $
+[ACTION]: r3
+------------------------------------------------------
+[STACK]: 0 FUNCTION 3 PROGRAM 14 
+[STATE]: 14
+[INP_SYM]: $
+[ACTION]: r2
+------------------------------------------------------
+[STACK]: 0 PROGRAM 1 
+[STATE]: 1
+[INP_SYM]: $
+[ACTION]: acc
+there is error in the program...
+parsing completed...

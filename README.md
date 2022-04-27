@@ -3,7 +3,7 @@
 ### Compilation:
 ```sh
 make clean && make
-./qlexer filename.q
+./qube filename.q
 #the output of lexical analysis will be stored in filename_lex_out.txt
 ```
 ### Lexer Output:

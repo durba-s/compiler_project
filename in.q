@@ -1,8 +1,8 @@
-def main() => void{
-    if(a) {
-        b=5;
-    }
-    else {
-        c=10;
-    }
+def main() => int{
+    int a;
+    int b;
+    int c;
+    int d;
+    d = ((a * b) + c);
+    return 0;
 }
